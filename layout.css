@@ -152,10 +152,17 @@ p {
   align-items: center;
 }
 
+.vendor-bio{
+  height: 50px;
+  width: 400px;
+}
+
 .vendor-edit-form{
   display: flex;
-  flex-direction: column;
   padding: 10px;
+  margin: 0 auto;
+  justify-content: center;
+  width: 600px;
 }
 
 .vendor-input {
@@ -170,14 +177,16 @@ p {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  width: 250px;
-  
+  width: 250px; 
+  align-items: center;
 }
+
 .vendor-input-form input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 5px;
+  justify-content: center;
 }
 
 .vendor-input input{

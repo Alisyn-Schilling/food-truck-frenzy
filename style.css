@@ -33,6 +33,16 @@ body {
   background-color: var(--color1-pale-silver);
 }
 
+button{
+  border-style: none;
+  margin: 5px;
+  padding: 10px;
+  font-family: var(--content-font);
+  background-color: var(--color1-pale-silver);
+  border-radius: 20px;
+  outline: none;
+}
+
 .food-truck-list a{
     text-decoration: none;
 }
@@ -118,6 +128,10 @@ nav li:hover {
     font-family: var(--content-font);
 }
 
+.vendor-edit-form {
+  background-color: var(--color4-portland-orange) ;
+}
+
 .vendor-login {
   font-family: var(--sub-header-font);
   border-color: var(--color-2-yellow-munsell);
@@ -125,4 +139,9 @@ nav li:hover {
 
 .vendor-input{
   background-color: var(--color4-portland-orange);
+}
+
+.vendor-input-form input{
+  text-align: center;
+  font-family: var(--content-font);
 }
