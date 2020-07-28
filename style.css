@@ -117,3 +117,12 @@ nav li:hover {
     background-color: var(--color4-portland-orange);
     font-family: var(--content-font);
 }
+
+.vendor-login {
+  font-family: var(--sub-header-font);
+  border-color: var(--color-2-yellow-munsell);
+}
+
+.vendor-input{
+  background-color: var(--color4-portland-orange);
+}

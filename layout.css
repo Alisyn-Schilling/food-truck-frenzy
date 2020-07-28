@@ -151,3 +151,48 @@ p {
   flex-direction: column;
   align-items: center;
 }
+
+.vendor-edit-form{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.vendor-input {
+  position: relative;
+  display: none;
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.vendor-input-form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 250px;
+  
+}
+.vendor-input-form input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+.vendor-input input{
+  text-align: center;
+}
+
+.vendor-login:hover .vendor-input{
+  display: block;
+}
+
+.vendor-login {
+  display: center;
+  position: absolute;
+  width: 200px;
+  text-align: center;
+}
+
+
