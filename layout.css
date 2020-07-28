@@ -41,14 +41,12 @@ h2 {
 
 header {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
 .header {
   display: flex;
-  flex-direction: row;
 }
 
 .header-pic {
@@ -58,13 +56,23 @@ header {
 }
 
 .home-list li {
-  padding: 5px; 
+  padding: 5px;
 }
 
-nav ul li {
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  padding: 5px;
+  font-size: 20px;
+}
+
+nav ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   list-style-type: none;
 }
 

@@ -53,6 +53,9 @@ h2 {
   font-size: 20px;
 }
 
+nav{
+    background-color: var(--color-2-yellow-munsell);
+}
 .nav-bar{
   list-style: none;
   font-family: var(--content-font);
