@@ -58,7 +58,14 @@ header {
 }
 
 .home-list li {
-  padding: 5px;
+  padding: 5px; 
+}
+
+nav ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
 }
 
 .single-vendor {
