@@ -89,6 +89,23 @@ nav ul {
   list-style-type: none;
 }
 
+.single-event-info {
+  padding: 5px;
+  border-radius: 20px;
+  height: 250px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  text-align: center;
+}
+
+.single-event-info-layout{
+  display: flex;
+  flex-direction: row;
+}
+
 .single-vendor {
   padding: 10px;
   display: flex;

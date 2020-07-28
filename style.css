@@ -71,6 +71,10 @@ nav li:hover {
   font-weight: bolder;
 }
 
+.single-event-info {
+  background-color: var(--color3-red-orange-color-wheel);
+  font-family: var(--content-font);
+}
 
 .single-vendor-info {
   background-color: var(--color3-red-orange-color-wheel);
