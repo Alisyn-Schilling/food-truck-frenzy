@@ -20,14 +20,14 @@ public class VendorController {
     @GetMapping("/vendors")
     public String showAllVendors(Model model){
         model.addAttribute("vendors", vendorStorage.getAllVendors());
-        return "";
+        return "all-vendors-template";
     }
     @GetMapping("/vendors/{name}")
     public String findByName(@PathVariable String name, Model model){
         model.addAttribute("vendors", vendorStorage.findByName(name));
-        return "";
+        return "vendor-profile-template";
     }
-    @PostMapping("/vendors/")
+    @PostMapping("/vendors")
     public String addVendor(String name, String menuLink, String priceRange, String address,
                             String imagePath, double latitude, double longitude){
         Vendor vendorToAdd = new Vendor(name, menuLink, priceRange, address, imagePath, latitude, longitude);
