@@ -15,6 +15,10 @@ article div {
   margin: 15px;
 }
 
+.event-main{
+  padding: 0;
+
+}
 .food-truck-list {
   display: flex;
   flex-direction: column;
@@ -59,14 +63,14 @@ header {
   padding: 5px;
 }
 
-iframe{
+iframe {
   height: 270px;
   width: 500px;
   border-style: none;
   border-radius: 20px;
 }
 
-.google-map{
+.google-map {
   margin-top: 10px;
   margin: 10px;
   display: flex;
@@ -101,7 +105,7 @@ nav ul {
   text-align: center;
 }
 
-.single-event-info-layout{
+.single-event-info-layout {
   display: flex;
   flex-direction: row;
 }
@@ -125,7 +129,7 @@ nav ul {
   margin: 10px;
 }
 
-.single-vendor-info-layout{
+.single-vendor-info-layout {
   display: flex;
   flex-direction: row;
 }
@@ -152,17 +156,29 @@ p {
   align-items: center;
 }
 
-.vendor-bio{
+.upcoming-event-main {
+  display: flex;
+  width: 700px;
+  height: 350px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.vendor-bio {
   height: 50px;
   width: 400px;
 }
 
-.vendor-edit-form{
+.vendor-edit-form {
   display: flex;
   padding: 10px;
   margin: 0 auto;
   justify-content: center;
   width: 600px;
+  border-radius: 20px;
 }
 
 .vendor-input {
@@ -177,7 +193,7 @@ p {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  width: 250px; 
+  width: 300px;
   align-items: center;
 }
 
@@ -189,11 +205,11 @@ p {
   justify-content: center;
 }
 
-.vendor-input input{
+.vendor-input input {
   text-align: center;
 }
 
-.vendor-login:hover .vendor-input{
+.vendor-login:hover .vendor-input {
   display: block;
 }
 
@@ -203,5 +219,3 @@ p {
   width: 200px;
   text-align: center;
 }
-
-

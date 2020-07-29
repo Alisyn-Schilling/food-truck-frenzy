@@ -63,6 +63,14 @@ h2 {
   font-size: 20px;
 }
 
+.main-event-pic{
+  background-image: url(../images/maine-lobster.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 400px;
+  height: 200px;
+}
 nav{
     background-color: var(--color-2-yellow-munsell);
 }
@@ -100,7 +108,7 @@ nav li:hover {
 }
 
 .truck-image-1 {
-  background-image: url(./images/exotic-latino-grill.png);
+  background-image: url(../images/exotic-latino-grill.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -108,7 +116,7 @@ nav li:hover {
 }
 
 .truck-image-2 {
-  background-image: url(./images/ray-rays.png);
+  background-image: url(../images/ray-rays.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -116,7 +124,7 @@ nav li:hover {
 }
 
 .truck-image-3 {
-  background-image: url(./images/schmidts.png);
+  background-image: url(../images/schmidts.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -126,6 +134,14 @@ nav li:hover {
 .upcoming-events{
     background-color: var(--color4-portland-orange);
     font-family: var(--content-font);
+}
+
+.upcoming-event-main{
+  background-color: var(--color3-red-orange-color-wheel);
+}
+
+.upcoming-event-main a{
+  text-decoration: none;
 }
 
 .vendor-edit-form {
