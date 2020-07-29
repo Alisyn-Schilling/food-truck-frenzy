@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Nunito&family=Ranchers&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color1-pale-silver: hsla(38, 8%, 73%, 1);
+  --color-2-yellow-munsell: hsla(51, 85%, 52%, 1);
+  --color3-red-orange-color-wheel: hsla(15, 100%, 50%, 1);
+  --color4-portland-orange: rgb(248, 136, 105);
+  --color5-rich-black-fogra-39: hsla(180, 20%, 4%, 1);
+  --header-font: "Ranchers", cursive;
+  --sub-header-font: "Krona One", sans-serif;
+  --content-font: "Nunito", sans-serif;
+}
+
+a:link {
+  color: var(--color5-rich-black-fogra-39);
+  
+}
+
+a:visited {
+  color: var(--color5-rich-black-fogra-39);
+}
+
+.food-truck-list a:hover {
+  transform: scale(1.1);
+}
+
+body {
+  background-color: var(--color1-pale-silver);
+}
+
+button{
+  border-style: none;
+  margin: 5px;
+  padding: 10px;
+  font-family: var(--content-font);
+  background-color: var(--color1-pale-silver);
+  border-radius: 20px;
+  outline: none;
+}
+
+.food-truck-list a{
+    text-decoration: none;
+}
+
+h1 {
+  font-family: var(--header-font);
+  font-size: 50px;
+}
+
+h2 {
+  font-family: var(--sub-header-font);
+}
+
+.home-list li {
+  list-style: none;
+  font-family: var(--content-font);
+  text-align: center;
+  font-size: 20px;
+}
+
+.main-event-pic{
+  background-image: url(../images/maine-lobster.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 300px;
+}
+nav{
+    background-color: var(--color-2-yellow-munsell);
+}
+.nav-bar{
+  list-style: none;
+  font-family: var(--content-font);
+  text-decoration: none;
+}
+
+nav li {
+  padding: 10px;
+  font-size: 20px;
+}
+
+nav li:hover {
+  font-weight: bolder;
+}
+
+.single-event-info {
+  background-color: var(--color3-red-orange-color-wheel);
+  font-family: var(--content-font);
+}
+
+.single-vendor-info {
+  background-color: var(--color3-red-orange-color-wheel);
+  font-family: var(--content-font);
+}
+
+.food-truck-list a:nth-child(even) {
+  background-color: var(--color4-portland-orange);
+}
+
+.food-truck-list a:nth-child(odd) {
+  background-color: var(--color3-red-orange-color-wheel);
+}
+
+.truck-image-1 {
+  background-image: url(../images/exotic-latino-grill.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 200px;
+}
+
+.truck-image-2 {
+  background-image: url(../images/ray-rays.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 200px;
+}
+
+.truck-image-3 {
+  background-image: url(../images/schmidts.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 200px;
+}
+
+.upcoming-events{
+    background-color: var(--color4-portland-orange);
+    font-family: var(--content-font);
+}
+
+.upcoming-event-main{
+  background-color: var(--color3-red-orange-color-wheel);
+}
+
+.upcoming-event-main a{
+  text-decoration: none;
+}
+
+.vendor-edit-form {
+  background-color: var(--color4-portland-orange) ;
+}
+
+.vendor-login {
+  font-family: var(--sub-header-font);
+  border-color: var(--color-2-yellow-munsell);
+}
+
+.vendor-input{
+  background-color: var(--color4-portland-orange);
+}
+
+.vendor-input-form input{
+  text-align: center;
+  font-family: var(--content-font);
+}
