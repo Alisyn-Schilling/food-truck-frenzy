@@ -18,7 +18,6 @@
 
 a:link {
   color: var(--color5-rich-black-fogra-39);
-  
 }
 
 a:visited {
@@ -33,7 +32,7 @@ body {
   background-color: var(--color1-pale-silver);
 }
 
-button{
+button {
   border-style: none;
   margin: 5px;
   padding: 10px;
@@ -43,8 +42,8 @@ button{
   outline: none;
 }
 
-.food-truck-list a{
-    text-decoration: none;
+.food-truck-list a {
+  text-decoration: none;
 }
 
 h1 {
@@ -63,17 +62,18 @@ h2 {
   font-size: 20px;
 }
 
-.main-event-pic{
+.main-event-pic {
   background-image: url(../images/maine-lobster.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   width: 300px;
 }
-nav{
-    background-color: var(--color-2-yellow-munsell);
+nav {
+  background-color: var(--color-2-yellow-munsell);
 }
-.nav-bar{
+
+.nav-bar {
   list-style: none;
   font-family: var(--content-font);
   text-decoration: none;
@@ -107,7 +107,7 @@ nav li:hover {
 }
 
 .truck-image-1 {
-  background-image: url(../images/exotic-latino-grill.png);
+  background-image: url(../../../../../images/exotic-latino-grill.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -115,7 +115,7 @@ nav li:hover {
 }
 
 .truck-image-2 {
-  background-image: url(../images/ray-rays.png);
+  background-image: url(../../../../../images/ray-rays.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -123,28 +123,28 @@ nav li:hover {
 }
 
 .truck-image-3 {
-  background-image: url(../images/schmidts.png);
+  background-image: url(../../../../../images/schmidts.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   width: 200px;
 }
 
-.upcoming-events{
-    background-color: var(--color4-portland-orange);
-    font-family: var(--content-font);
+.upcoming-events {
+  background-color: var(--color4-portland-orange);
+  font-family: var(--content-font);
 }
 
-.upcoming-event-main{
+.upcoming-event-main {
   background-color: var(--color3-red-orange-color-wheel);
 }
 
-.upcoming-event-main a{
+.upcoming-event-main a {
   text-decoration: none;
 }
 
 .vendor-edit-form {
-  background-color: var(--color4-portland-orange) ;
+  background-color: var(--color4-portland-orange);
 }
 
 .vendor-login {
@@ -152,11 +152,11 @@ nav li:hover {
   border-color: var(--color-2-yellow-munsell);
 }
 
-.vendor-input{
+.vendor-input {
   background-color: var(--color4-portland-orange);
 }
 
-.vendor-input-form input{
+.vendor-input-form input {
   text-align: center;
   font-family: var(--content-font);
 }
