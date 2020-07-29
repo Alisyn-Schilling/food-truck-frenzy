@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"
+<html
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/layout.css"/>
@@ -51,7 +51,7 @@
             <div class="truck-image-2"></div>
             <div class="information-2">
                 <ul class="home-list">
-                    <li><strong>Ray Ray's Hog Pit Clintonville</strong></li>
+                    <li><strong th:text="vendor: ${vendor.name}> </strong></li>
                     <li>2619 N High St, Columbus, OH 43202</li>
                     <li>Thus- Sun 11:30 am-8 pm</li>
                 </ul>
@@ -64,7 +64,7 @@
             <div class="truck-image-3"></div>
             <div class="information-3">
                 <ul class="home-list">
-                    <li><strong>Schmidt’s Food Truck Clintonville</strong></li>
+                    <li><strong> th:text="vendors: ${vendor.name}</strong></li>
                     <li>Crimson Cup - Clintonville 4541 N High St</li>
                     <li>Sunday- Monday 4 pm - 8 pm</li>
                 </ul>
