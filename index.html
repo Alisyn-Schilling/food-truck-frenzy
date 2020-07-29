@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link rel="stylesheet" href="./layout.css"/>
-    <link rel="stylesheet" href="./style.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Food Truck Frenzy</title>
-</head>
-<body>
-<div class="vendor-login">
-    <p>Vendor Log-In</p>
-    <form class="vendor-input">
-        <input type="text" placeholder="Enter Vendor Name"></input>
-        <input type="password" placeholder="Enter Password"></input>
+  </head>
+  <body>
+    <div class="vendor-login">
+      <p>Vendor Log-In</p>
+      <form class="vendor-input">
+        <input type="text" placeholder="Enter Vendor Name" />
+        <input type="password" placeholder="Enter Password" />
         <button type="button">Submit</button>
-    </form>
-</div>
-<header>
-    <div class="header">
-        <img class="header-pic" src="./images/header-pic.png">
-        <h1>Food Truck Frenzy</h1>
-        <img class="header-pic" src="./images/header-pic.png">
+      </form>
     </div>
-</header>
-<nav>
-    <ul>
+    <header>
+      <div class="header">
+        <img class="header-pic" src="./images/header-pic.png" />
+        <h1>Food Truck Frenzy</h1>
+        <img class="header-pic" src="./images/header-pic.png" />
+      </div>
+    </header>
+    <nav>
+      <ul>
         <li>
-            <a class="nav-bar" href="index.html">Home</a>
+          <a class="nav-bar" href="index.html">Home</a>
         </li>
         <li>
-            <a class="nav-bar" href="#">All Food Trucks</a>
+          <a class="nav-bar" href="all-vendors-page.html">All Food Trucks</a>
         </li>
         <li>
-            <a class="nav-bar" href="#">Upcoming Events</a>
+          <a class="nav-bar" href="all-events-page.html">Upcoming Events</a>
         </li>
-    </ul>
-</nav>
-<div class="food-truck-list">
-    <a href="#">
-        <article class="truck-info">
-            <div class="truck-image-1"></div>
-            <div class="information">
-                <ul class="home-list">
-                    <li><strong>Exotic Latino Grill</strong></li>
-                    <li>355 E Hudson St, Columbus, OH 43202</li>
-                    <li>Sunday- Monday 10am-1am</li>
-                </ul>
-            </div>
+      </ul>
+    </nav>
+    <div class="upcoming-event-main">
+      <a href="#">
+        <article class="event-main">
+          <div class="main-event-pic"></div>
+          <div class="information">
+            <ul class="home-list">
+              <li><h3>Upcoming Event!</h3></li>
+              <li><strong>Cousins Maine Lobsters</strong></li>
+              <li>August 2, 2020</li>
+              <li>12:00 PM - 5:00 PM</li>
+              <li>Homestead Beer Co.</li>
+              <li>811 Irving Wick Dr W, Heath, OH 43056, USA</li>
+            </ul>
+          </div>
         </article>
-    </a>
-    <a href="#">
+      </a>
+    </div>
+  </body>
+</html>
+<!-- </a>
+      <a href="#">
         <article class="truck-info">
             <div class="truck-image-2"></div>
             <div class="information-2">
@@ -73,7 +80,4 @@
                 </ul>
             </div>
         </article>
-    </a>
-</div>
-</body>
-</html>
+      </a> -->

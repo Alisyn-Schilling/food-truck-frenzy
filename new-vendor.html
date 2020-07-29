@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/layout.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>All Food Trucks Page</title>
+    <title>New Vendor Form</title>
   </head>
   <body>
     <div class="vendor-login">
@@ -22,7 +22,6 @@
         <h1>Food Truck Frenzy</h1>
         <img class="header-pic" src="./images/header-pic.png" />
       </div>
-      <!-- <p>Vendor Log-In</p> -->
     </header>
     <nav>
       <ul>
@@ -37,29 +36,36 @@
         </li>
       </ul>
     </nav>
-    <a href="#">
-      <article class="truck-info">
-        <div class="truck-image-2"></div>
-        <div class="information-2">
-          <ul class="home-list">
-            <li><strong>Ray Ray's Hog Pit Clintonville</strong></li>
-            <li>2619 N High St, Columbus, OH 43202</li>
-            <li>Thus- Sun 11:30 am-8 pm</li>
-          </ul>
+
+    <h2>New Vendor Form</h2>
+    <div class="vendor-edit-form">
+      <form>
+        <div class="vendor-input-form">
+          <input type="text" placeholder="Enter Vendor Name" />
+          <input type="text" placeholder="Enter Vendor Image" />
+          <input type="text" placeholder="Enter Vendor Address" />
+          <input
+            class="vendor-bio"
+            type="text"
+            placeholder="Enter Vendor Biography"
+          />
+          <input
+            class="vendor-bio"
+            type="text"
+            placeholder="Enter Vendor Hours"
+          />
+          <input
+            class="vendor-bio"
+            type="text"
+            placeholder="Enter Vendor Upcoming Events"
+          />
+          <button type="button">Submit</button>
         </div>
-      </article>
-    </a>
-    <a href="#">
-      <article class="truck-info">
-        <div class="truck-image-3"></div>
-        <div class="information-3">
-          <ul class="home-list">
-            <li><strong>Schmidt’s Food Truck Clintonville</strong></li>
-            <li>Crimson Cup - Clintonville 4541 N High St</li>
-            <li>Sunday- Monday 4 pm - 8 pm</li>
-          </ul>
-        </div>
-      </article>
-    </a>
+      </form>
+    </div>
   </body>
 </html>
+<!-- <form action="upload.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload Image" name="submit">
+        </form> -->
