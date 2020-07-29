@@ -68,8 +68,7 @@ h2 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 400px;
-  height: 200px;
+  width: 300px;
 }
 nav{
     background-color: var(--color-2-yellow-munsell);
