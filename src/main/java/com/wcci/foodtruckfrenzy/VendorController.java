@@ -31,14 +31,15 @@ public class VendorController {
     public String addVendor(String name, String menuLink, String priceRange, String address,
                             String imagePath, double latitude, double longitude){
         Vendor vendorToAdd = new Vendor(name, menuLink, priceRange, address, imagePath, latitude, longitude);
-        VendorStorage.save(vendorToAdd);
-        return "redirect:/vendors" + vendorToAdd.getName();
+        vendorStorage.save(vendorToAdd);
+        return "redirect:/vendors/" + vendorToAdd.getName();
     }
     @PostMapping("/vendors/events")
     public String addEventToVendor(long id, String eventName){
-        Vendor vendor = VendorStorage.findById(id);
-        Event event = EventStorage.
-        return
+        Vendor vendor = vendorStorage.findById(id);
+        Event event = eventStorage.findByName(eventName);
+        vendor.addEvent(event);
+        return "redirect:/vendors/" + vendor.getName();
     }
 
 }
