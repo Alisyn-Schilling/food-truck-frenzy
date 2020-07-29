@@ -107,7 +107,7 @@ nav li:hover {
 }
 
 .truck-image-1 {
-  background-image: url(../images/exotic-latino-grill.png);
+  background-image: url(../../../../../images/exotic-latino-grill.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -115,7 +115,7 @@ nav li:hover {
 }
 
 .truck-image-2 {
-  background-image: url(../images/ray-rays.png);
+  background-image: url(../../../../../images/ray-rays.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -123,7 +123,7 @@ nav li:hover {
 }
 
 .truck-image-3 {
-  background-image: url(../images/schmidts.png);
+  background-image: url(../../../../../images/schmidts.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
