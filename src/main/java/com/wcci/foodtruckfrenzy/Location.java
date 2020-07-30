@@ -6,8 +6,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.Objects;
+
 @Entity
-public class Location {
+public class Location implements Comparable<Location>{
     @Id
     @GeneratedValue
     private long id;
@@ -70,5 +72,46 @@ public class Location {
 
     public boolean isRecurring() {
         return recurring;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Location location = (Location) o;
+        return id == location.id &&
+                Double.compare(location.latitude, latitude) == 0 &&
+                Double.compare(location.longitude, longitude) == 0 &&
+                recurring == location.recurring &&
+                Objects.equals(address, location.address) &&
+                Objects.equals(date, location.date) &&
+                dayOfWeek == location.dayOfWeek &&
+                Objects.equals(openHours, location.openHours) &&
+                Objects.equals(vendor, location.vendor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, address, latitude, longitude, date, dayOfWeek, recurring, openHours, vendor);
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "id=" + id +
+                ", address='" + address + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", date=" + date +
+                ", dayOfWeek=" + dayOfWeek +
+                ", recurring=" + recurring +
+                ", openHours='" + openHours + '\'' +
+                ", vendor=" + vendor +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Location location) {
+        return this.dayOfWeek.compareTo(location.getDayOfWeek());
     }
 }

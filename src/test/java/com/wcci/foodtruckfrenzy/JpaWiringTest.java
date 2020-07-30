@@ -24,16 +24,18 @@ public class JpaWiringTest {
 
     @Test
     public void EventsCanHaveMultipleVendors() {
-        Date date = new Date();
-        Event testEvent1 = new Event("testEvent1", date, "address1", "times1", 45.23423, 64.1234);
-        Event testEvent2 = new Event("testEvent2", date, "address2", "times2", 83.23423, 25.1234);
+        LocalDate date = LocalDate.of(2020, Month.JULY, 30);
+        Event testEvent1 = new Event("testEvent1", date, "imagePath",
+                "address1", "times1", 45.23423, 64.1234);
+        Event testEvent2 = new Event("testEvent2", date, "imagePath2",
+                "address2", "times2", 83.23423, 25.1234);
         eventRepo.save(testEvent1);
         eventRepo.save(testEvent2);
-        Vendor testVendor = new Vendor("name", "menuLink", "priceRange", "address",
-                "imagePath", 45.23425, 64.242351, testEvent1, testEvent2);
+        Vendor testVendor = new Vendor("name", "bio", "menuLink",
+                "imagePath", testEvent1, testEvent2);
         vendorRepo.save(testVendor);
-        Vendor testVendor2 = new Vendor("testVendor2", "menuLink", "priceRange", "address",
-                "imagePath", 474.23425, 23.242351, testEvent1);
+        Vendor testVendor2 = new Vendor("testVendor2", "bio2", "menuLink",
+                "imagePath", testEvent1);
         vendorRepo.save(testVendor2);
 
         entityManager.flush();
@@ -47,8 +49,8 @@ public class JpaWiringTest {
     @Test
     public void vendorsCanHaveMultipleLocations() {
         LocalDate testDate = LocalDate.of(2020, Month.JULY, 30);
-        Vendor testVendor = new Vendor("name", "menuLink", "priceRange", "address",
-                "imagePath", 45.23425, 64.242351);
+        Vendor testVendor = new Vendor("name", "bio", "menuLink",
+                "imagePath");
         vendorRepo.save(testVendor);
         Location testLocation = new Location("address", 45.23423, 23.4234,
                 testDate, true, "openHours", testVendor);
@@ -63,7 +65,7 @@ public class JpaWiringTest {
 
         Vendor retrievedVendor = vendorRepo.findById(testVendor.getId()).get();
         assertThat(retrievedVendor).isEqualTo(testVendor);
-
+        assertThat(retrievedVendor.getLocations()).containsExactlyInAnyOrder(testLocation, testLocation2);
 
     }
 }

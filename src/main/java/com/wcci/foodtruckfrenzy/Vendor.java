@@ -1,10 +1,8 @@
 package com.wcci.foodtruckfrenzy;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Objects;
+import java.time.LocalDate;
+import java.util.*;
 
 @Entity
 public class Vendor {
@@ -15,8 +13,6 @@ public class Vendor {
     private String bio;
     private String menuLink;
     private String imagePath;
-    private double latitude;
-    private double longitude;
     @ManyToMany
     private Collection<Event> events;
     @OneToMany(mappedBy = "vendor")
@@ -25,14 +21,12 @@ public class Vendor {
     protected Vendor() {
     }
 
-    public Vendor(String name, String bio, String menuLink, String imagePath, double latitude, double longitude, Event... events) {
+    public Vendor(String name, String bio, String menuLink, String imagePath, Event... events) {
 
         this.name = name;
         this.bio = bio;
         this.menuLink = menuLink;
         this.imagePath = imagePath;
-        this.latitude = latitude;
-        this.longitude = longitude;
         this.events = new ArrayList<>(Arrays.asList(events));
     }
 
@@ -46,14 +40,6 @@ public class Vendor {
 
     public String getImagePath() {
         return imagePath;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
     }
 
     public long getId() {
@@ -78,8 +64,6 @@ public class Vendor {
         if (o == null || getClass() != o.getClass()) return false;
         Vendor vendor = (Vendor) o;
         return id == vendor.id &&
-                Double.compare(vendor.latitude, latitude) == 0 &&
-                Double.compare(vendor.longitude, longitude) == 0 &&
                 Objects.equals(name, vendor.name) &&
                 Objects.equals(menuLink, vendor.menuLink) &&
                 Objects.equals(imagePath, vendor.imagePath);
@@ -87,7 +71,7 @@ public class Vendor {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, menuLink, imagePath, latitude, longitude);
+        return Objects.hash(id, name, menuLink, imagePath);
     }
 
     @Override
@@ -97,12 +81,30 @@ public class Vendor {
                 ", name='" + name + '\'' +
                 ", menuLink='" + menuLink + '\'' +
                 ", imagePath='" + imagePath + '\'' +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
                 '}';
     }
 
     public void addEvent(Event event) {
         events.add(event);
+    }
+
+    public void addLocation(Location location) {
+        locations.add(location);
+    }
+
+    public Collection<Location> getNext7DayLocations(){
+        LocalDate date = LocalDate.now();
+        ArrayList<Location> next7Days = new ArrayList<>();
+        for (Location location: locations) {
+            if (location.isRecurring() &&
+                    location.getDate().isBefore(date)) {
+                next7Days.add(location);
+            } else if (location.getDate().isAfter(date) &&
+                    location.getDate().isBefore(date.plusDays(7))) {
+                next7Days.add(location);
+            }
+        }
+        Collections.sort(next7Days);
+        return next7Days;
     }
 }

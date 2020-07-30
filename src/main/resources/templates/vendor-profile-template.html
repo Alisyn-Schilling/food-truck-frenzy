@@ -54,7 +54,7 @@
             <p>2619 N High St, Columbus, OH 43202</p>
             <p>Bio about Ray Ray</p>
             <ul class="hours">
-                <li>Monday - Wednesday: CLOSED</li>
+                <li  th:each="location :${vendors.getNext7DayLocations()}" th:text="${location.dayOfWeek} ${location.openHours}">Monday - Wednesday: CLOSED</li>
                 <li>Thursday: 11:30am - 8:00pm</li>
                 <li>Friday: 11:30am - 8:00pm</li>
                 <li>Saturday: 11:30am - 8:00pm</li>

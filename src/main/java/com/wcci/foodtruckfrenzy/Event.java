@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Objects;
@@ -14,7 +15,7 @@ public class Event {
     @GeneratedValue
     private long id;
     private String name;
-    private Date date;
+    private LocalDate date;
     private String imagePath;
     private String address;
     private String times;
@@ -26,7 +27,7 @@ public class Event {
     protected Event() {
     }
 
-    public Event(String name, Date date, String imagePath, String address, String times, double latitude, double longitude) {
+    public Event(String name, LocalDate date, String imagePath, String address, String times, double latitude, double longitude) {
         this.name = name;
         this.date = date;
         this.imagePath = imagePath;
@@ -40,7 +41,7 @@ public class Event {
         return name;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
