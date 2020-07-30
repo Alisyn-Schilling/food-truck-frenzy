@@ -100,4 +100,8 @@ public class Vendor {
                 ", longitude=" + longitude +
                 '}';
     }
+
+    public void addEvent(Event event) {
+        events.add(event);
+    }
 }
