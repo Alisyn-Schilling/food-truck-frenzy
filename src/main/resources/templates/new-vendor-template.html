@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/layout.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+
+    <title>Food Truck Frenzy</title>
+</head>
+
+
+<body>
+
+<div class="vendor-login">
+    <p>Vendor Log-In</p>
+    <form class="vendor-input">
+        <input type="text" placeholder="Enter Vendor Name"/>
+        <input type="password" placeholder="Enter Password"/>
+        <button type="button">Submit</button>
+    </form>
+</div>
+
+<header>
+    <div class="header">
+        <img class="header-pic" src="./images/header-pic.png"/>
+        <h1>Food Truck Frenzy</h1>
+        <img class="header-pic" src="./images/header-pic.png"/>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li>
+            <a class="nav-bar" href="index.html">Home</a>
+        </li>
+        <li>
+            <a class="nav-bar" href="all-vendors-page.html">All Food Trucks</a>
+        </li>
+        <li>
+            <a class="nav-bar" href="all-events-page.html">Upcoming Events</a>
+        </li>
+    </ul>
+</nav>
+
+<h2>New Vendor Form</h2>
+<div class="vendor-edit-form">
+    <form>
+        <div class="vendor-input-form">
+            <input type="text" placeholder="Enter Vendor Name"/>
+            <input type="text" placeholder="Enter Vendor Image"/>
+            <input type="text" placeholder="Enter Vendor Address"/>
+            <input
+                    class="vendor-bio"
+                    type="text"
+                    placeholder="Enter Vendor Biography"
+            />
+            <input
+                    class="vendor-bio"
+                    type="text"
+                    placeholder="Enter Vendor Hours"
+            />
+            <input
+                    class="vendor-bio"
+                    type="text"
+                    placeholder="Enter Vendor Upcoming Events"
+            />
+            <button type="button">Submit</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
