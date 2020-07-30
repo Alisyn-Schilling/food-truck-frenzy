@@ -43,8 +43,8 @@
 
 <body>
 
-<div class="single-vendor">
-    <h2>Hometown Market</h2>
+<div th:each="events:${events}" class="single-vendor">
+    <h2 th:text="${events.name}">Hometown Market</h2>
     <img
             class="ray-ray-pic"
             src="./images/HometownMarket.jpg"
@@ -54,14 +54,14 @@
     <div class="single-event-info-layout">
 
         <div class="single-event-info">
-            <p>
+            <p th:text="${events.date}" th:text="${events.address}" th:text="${events.times}">
                 July 29 <br/>
                 3895 Columbus Road <br/>
                 3pm-8pm
             </p>
             <h3>Food Trucks</h3>
-            <ul class="hours">
-                <li>Schmidt's Food Truck</li>
+            <ul th:each="vendor:${events.vendors}" class="hours">
+                <li th:text="${vendor.name}">Schmidt's Food Truck</li>
             </ul>
         </div>
 
