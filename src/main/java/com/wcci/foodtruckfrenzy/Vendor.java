@@ -1,9 +1,6 @@
 package com.wcci.foodtruckfrenzy;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -15,24 +12,24 @@ public class Vendor {
     @GeneratedValue
     private long id;
     private String name;
+    private String bio;
     private String menuLink;
-    private String priceRange;
-    private String address;
     private String imagePath;
     private double latitude;
     private double longitude;
     @ManyToMany
     private Collection<Event> events;
+    @OneToMany(mappedBy = "vendor")
+    private Collection<Location> locations;
 
     protected Vendor() {
     }
 
-    public Vendor(String name, String menuLink, String priceRange, String address, String imagePath, double latitude, double longitude, Event... events) {
+    public Vendor(String name, String bio, String menuLink, String imagePath, double latitude, double longitude, Event... events) {
 
         this.name = name;
+        this.bio = bio;
         this.menuLink = menuLink;
-        this.priceRange = priceRange;
-        this.address = address;
         this.imagePath = imagePath;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -47,14 +44,6 @@ public class Vendor {
         return menuLink;
     }
 
-    public String getPriceRange() {
-        return priceRange;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
     public String getImagePath() {
         return imagePath;
     }
@@ -67,6 +56,22 @@ public class Vendor {
         return longitude;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public Collection<Event> getEvents() {
+        return events;
+    }
+
+    public Collection<Location> getLocations() {
+        return locations;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -77,14 +82,12 @@ public class Vendor {
                 Double.compare(vendor.longitude, longitude) == 0 &&
                 Objects.equals(name, vendor.name) &&
                 Objects.equals(menuLink, vendor.menuLink) &&
-                Objects.equals(priceRange, vendor.priceRange) &&
-                Objects.equals(address, vendor.address) &&
                 Objects.equals(imagePath, vendor.imagePath);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, menuLink, priceRange, address, imagePath, latitude, longitude);
+        return Objects.hash(id, name, menuLink, imagePath, latitude, longitude);
     }
 
     @Override
@@ -93,8 +96,6 @@ public class Vendor {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", menuLink='" + menuLink + '\'' +
-                ", priceRange='" + priceRange + '\'' +
-                ", address='" + address + '\'' +
                 ", imagePath='" + imagePath + '\'' +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +

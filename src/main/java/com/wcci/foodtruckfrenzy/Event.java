@@ -15,6 +15,7 @@ public class Event {
     private long id;
     private String name;
     private Date date;
+    private String imagePath;
     private String address;
     private String times;
     private double latitude;
@@ -25,9 +26,10 @@ public class Event {
     protected Event() {
     }
 
-    public Event(String name, Date date, String address, String times, double latitude, double longitude) {
+    public Event(String name, Date date, String imagePath, String address, String times, double latitude, double longitude) {
         this.name = name;
         this.date = date;
+        this.imagePath = imagePath;
         this.address = address;
         this.times = times;
         this.latitude = latitude;
@@ -64,6 +66,10 @@ public class Event {
 
     public Collection<Vendor> getVendors() {
         return vendors;
+    }
+
+    public String getImagePath() {
+        return imagePath;
     }
 
     @Override
