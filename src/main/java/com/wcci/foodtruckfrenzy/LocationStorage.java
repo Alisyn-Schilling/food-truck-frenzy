@@ -12,9 +12,8 @@ public class LocationStorage {
         this.locationRepo = locationRepo;
     }
 
-    public Iterable<Location> getByDayOfWeek(String dayOfWeek){
-        DayOfWeek dayToFind = DayOfWeek.valueOf(dayOfWeek);
-        return locationRepo.findByDayOfWeek(dayToFind);
+    public Iterable<Location> getByDayOfWeek(DayOfWeek dayOfWeek) {
+        return locationRepo.findByDayOfWeek(dayOfWeek);
     }
 
 
