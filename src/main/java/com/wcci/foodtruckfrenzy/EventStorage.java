@@ -11,6 +11,10 @@ import java.util.Collections;
 public class EventStorage {
     EventRepository eventRepo;
 
+    public EventStorage(EventRepository eventRepo) {
+        this.eventRepo = eventRepo;
+    }
+
     public Event findByName(String eventName) {
         return eventRepo.findByName(eventName);
     }
@@ -24,7 +28,6 @@ public class EventStorage {
     }
 
     public Event findNextEvent() {
-//        Iterable<Event> allEvents = eventRepo.findAll();
         LocalDate date = LocalDate.now();
         ArrayList<Event> nextEvent = new ArrayList<>();
         for (Event event : eventRepo.findAll()) {
