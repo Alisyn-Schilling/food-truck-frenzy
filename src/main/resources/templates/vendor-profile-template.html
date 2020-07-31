@@ -32,13 +32,13 @@
 <nav>
     <ul>
         <li>
-            <a class="nav-bar" href="index.html">Home</a>
+            <a class="nav-bar" th:href="@{'/'}" href="index.html">Home</a>
         </li>
         <li>
-            <a class="nav-bar" href="#">All Food Trucks</a>
+            <a class="nav-bar" th:href="@{'/vendors'}" href="#">All Food Trucks</a>
         </li>
         <li>
-            <a class="nav-bar" href="#">Upcoming Events</a>
+            <a class="nav-bar" th:href="@{'/events'}" href="#">Upcoming Events</a>
         </li>
     </ul>
 </nav>
@@ -51,8 +51,8 @@
     <div class="single-vendor-info-layout">
         <div class="single-vendor-info">
             <a th:href="${vendors.menuLink}" href="https://www.rayrayshogpit.com/" target="_blank">Menu Link</a>
-            <p th:text="${vendors.address}">2619 N High St, Columbus, OH 43202</p>
-            <p>Bio about Ray Ray</p>
+            <p th:text="${vendors.getNextLocation().address}">2619 N High St, Columbus, OH 43202</p>
+            <p th:text="${vendors.bio}">Bio about Ray Ray</p>
             <ul class="hours">
                 <li  th:each="location :${vendors.getNext7DayLocations()}" th:text="${location.dayOfWeek} ${location.openHours}">Monday - Wednesday: CLOSED</li>
                 <li>Thursday: 11:30am - 8:00pm</li>

@@ -52,8 +52,8 @@
             <div class="information-2">
                 <ul class="home-list">
                     <li><strong th:text="${vendor.name}"> </strong></li>
-                    <li th:text="${vendor.address}">2619 N High St, Columbus, OH 43202</li>
-                    <li>Thus- Sun 11:30 am-8 pm</li>
+                    <li th:text="${vendor.getNextLocation().address}"></li>
+                    <li th:text="${vendor.getNextLocation().openHours}">Thus- Sun 11:30 am-8 pm</li>
                 </ul>
             </div>
         </article>

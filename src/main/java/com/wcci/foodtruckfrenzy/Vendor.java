@@ -1,6 +1,7 @@
 package com.wcci.foodtruckfrenzy;
 
 import javax.persistence.*;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -92,19 +93,31 @@ public class Vendor {
         locations.add(location);
     }
 
-    public Collection<Location> getNext7DayLocations(){
+    public Collection<Location> getNext7DayLocations() {
         LocalDate date = LocalDate.now();
         ArrayList<Location> next7Days = new ArrayList<>();
-        for (Location location: locations) {
+        for (Location location : locations) {
             if (location.isRecurring() &&
                     location.getDate().isBefore(date)) {
                 next7Days.add(location);
-            } else if (location.getDate().isAfter(date) &&
-                    location.getDate().isBefore(date.plusDays(7))) {
+            } else if (location.getDate().isAfter(date.minusDays(1)) &&
+                    location.getDate().isBefore(date.plusDays(8))) {
                 next7Days.add(location);
             }
         }
         Collections.sort(next7Days);
         return next7Days;
+    }
+
+    public Location getNextLocation() {
+        LocalDate date = LocalDate.now();
+        DayOfWeek dayOfWeek = date.getDayOfWeek();
+        Collection<Location> locations = this.getNext7DayLocations();
+        for (Location location : locations) {
+            if (location.getDayOfWeek().compareTo(dayOfWeek) >= 0) {
+                return location;
+            }
+        }
+        return null;
     }
 }
