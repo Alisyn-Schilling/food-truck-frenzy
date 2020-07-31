@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Controller
@@ -29,9 +30,9 @@ public class EventController {
         return "event-page-template";
     }
     @PostMapping("/events")
-    public String addEvent(String name, Date date, String address, String times, double latitude,
+    public String addEvent(String name, LocalDate date, String imagePath, String address, String times, double latitude,
                            double longitude){
-        Event eventToAdd = new Event(name, date, address, times, latitude, longitude);
+        Event eventToAdd = new Event(name, date, imagePath, address, times, latitude, longitude);
         eventStorage.save(eventToAdd);
         return "redirect:/events/" + eventToAdd.getName();
     }

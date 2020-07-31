@@ -28,9 +28,9 @@ public class VendorController {
         return "vendor-profile-template";
     }
     @PostMapping("/vendors")
-    public String addVendor(String name, String menuLink, String priceRange, String address,
-                            String imagePath, double latitude, double longitude){
-        Vendor vendorToAdd = new Vendor(name, menuLink, priceRange, address, imagePath, latitude, longitude);
+    public String addVendor(String name, String menuLink, String address,
+                            String imagePath){
+        Vendor vendorToAdd = new Vendor(name, menuLink, address, imagePath);
         vendorStorage.save(vendorToAdd);
         return "redirect:/vendors/" + vendorToAdd.getName();
     }
