@@ -45,45 +45,15 @@
 </nav>
 
 <div class="food-truck-list">
-    <a href="#">
+    <a th:each="event:${events}" href="#">
         <article class="truck-info">
             <div class="truck-image-1"></div>
             <div class="information">
                 <ul class="home-list">
-                    <li><strong>Exotic Latino Grill</strong></li>
-                    <li>Upcoming Events: None</li>
-                </ul>
-            </div>
-        </article>
-    </a>
-
-    <a href="#">
-        <article class="truck-info">
-            <div class="truck-image-2"></div>
-            <div class="information-2">
-                <ul class="home-list">
-                    <li><strong>Ray Ray's Hog Pit Clintonville</strong></li>
-                    <li>Upcoming Events: None</li>
-                </ul>
-            </div>
-        </article>
-    </a>
-
-    <a href="#">
-        <article class="truck-info">
-            <div class="truck-image-3"></div>
-            <div class="information-3">
-                <ul class="home-list">
-                    <li><strong>Schmidt’s Food Truck Clintonville</strong></li>
-                    <li>Upcoming Events:</li>
-                    <li>
-                        July 29 - Hometown Market - Centerburg - 3895 Columbus Road
-                        3pm-8pm
-                    </li>
-                    <li>
-                        July 29 - Reynoldsburg Market - JFK Park - 7232 E Main Street
-                        4pm-7pm
-                    </li>
+                    <li><strong th:text="${event.name}"></strong></li>
+                    <li th:text="${event.address}"></li>
+                    <li th:text="${event.date}"></li>
+                    <li th:text="${event.times}"></li>
                 </ul>
             </div>
         </article>

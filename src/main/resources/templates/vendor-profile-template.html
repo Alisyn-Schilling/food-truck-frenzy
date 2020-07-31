@@ -46,12 +46,12 @@
 <body>
 
 <div class="single-vendor">
-    <h2>Ray Ray's Hog Pit Clintonville</h2>
-    <img class="ray-ray-pic" src="./images/ray-rays.png" alt="Ray Ray"/>
+    <h2 th:text="${vendors.name}"></h2>
+    <img th:text="${vendors.imagePath}" class="ray-ray-pic" src="./images/ray-rays.png" alt="Ray Ray"/>
     <div class="single-vendor-info-layout">
         <div class="single-vendor-info">
-            <a href="https://www.rayrayshogpit.com/" target="_blank">Menu Link</a>
-            <p>2619 N High St, Columbus, OH 43202</p>
+            <a th:href="${vendors.menuLink}" href="https://www.rayrayshogpit.com/" target="_blank">Menu Link</a>
+            <p th:text="${vendors.address}">2619 N High St, Columbus, OH 43202</p>
             <p>Bio about Ray Ray</p>
             <ul class="hours">
                 <li>Monday - Wednesday: CLOSED</li>
