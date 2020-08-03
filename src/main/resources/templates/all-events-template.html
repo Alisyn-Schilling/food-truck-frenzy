@@ -33,19 +33,19 @@
 <nav>
     <ul>
         <li>
-            <a class="nav-bar" href="index.html">Home</a>
+            <a class="nav-bar" th:href="@{'/'}">Home</a>
         </li>
         <li>
-            <a class="nav-bar" href="#">All Food Trucks</a>
+            <a class="nav-bar" th:href="@{'/vendors'}">All Food Trucks</a>
         </li>
         <li>
-            <a class="nav-bar" href="#">Upcoming Events</a>
+            <a class="nav-bar" th:href="@{'/events'}">Upcoming Events</a>
         </li>
     </ul>
 </nav>
 
 <div class="food-truck-list">
-    <a th:each="event:${events}" href="#">
+    <a th:each="event:${events}" th:href="@{'/events/{name}'}">
         <article class="truck-info">
             <div class="truck-image-1"></div>
             <div class="information">

@@ -9,7 +9,7 @@
 
     <title>Food Truck Frenzy</title>
 </head>
-
+<body>
 <div class="vendor-login">
     <p>Vendor Log-In</p>
     <form class="vendor-input">
@@ -30,18 +30,18 @@
 <nav>
     <ul>
         <li>
-            <a class="nav-bar" href="index.html">Home</a>
+            <a class="nav-bar" th:href="@{'/'}">Home</a>
         </li>
         <li>
-            <a class="nav-bar" href="#">All Food Trucks</a>
+            <a class="nav-bar" th:href="@{'/vendors'}">All Food Trucks</a>
         </li>
         <li>
-            <a class="nav-bar" href="#">Upcoming Events</a>
+            <a class="nav-bar" th:href="@{'/events'}">Upcoming Events</a>
         </li>
     </ul>
 </nav>
 
-<body>
+
 
 <div th:each="events:${events}" class="single-vendor">
     <h2 th:text="${events.name}">Hometown Market</h2>
@@ -54,11 +54,9 @@
     <div class="single-event-info-layout">
 
         <div class="single-event-info">
-            <p th:text="${events.date}" th:text="${events.address}" th:text="${events.times}">
-                July 29 <br/>
-                3895 Columbus Road <br/>
-                3pm-8pm
-            </p>
+            <p th:text="${events.date}"> </p><br/>
+            <p th:text="${events.address}"> </p><br/>
+            <p th:text="${events.times}"> </p><br/>
             <h3>Food Trucks</h3>
             <ul th:each="vendor:${events.vendors}" class="hours">
                 <li th:text="${vendor.name}">Schmidt's Food Truck</li>
