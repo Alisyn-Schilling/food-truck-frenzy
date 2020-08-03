@@ -18,7 +18,7 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        LocalDate date1 = LocalDate.of(2020, Month.AUGUST, 1);
+        LocalDate date1 = LocalDate.of(2020, Month.AUGUST, 31);
         Event event1 = new Event("Super Fun Event", date1, "../../images/HometownMarket.jpg", "3895 Columbus Rd", "3:00PM - 8:00PM", 40.3002819, -82.7057998, "Hometown Market");
         eventRepository.save(event1);
         Vendor vendor1 = new Vendor("Louisiana Grill", "Sara T's Favorite Food Truck in the Entire World yum yum yum cajun food", "http://www.louisiana-grill.com/menu_festival.html", "../../images/LouisianaGrill.png");

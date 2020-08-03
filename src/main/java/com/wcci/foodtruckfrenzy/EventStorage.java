@@ -3,6 +3,7 @@ package com.wcci.foodtruckfrenzy;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -36,7 +37,9 @@ public class EventStorage {
             }
         }
         if (nextEvent.isEmpty()) {
-            return null;
+            LocalDate futureDate = LocalDate.of(2022, Month.AUGUST, 31);
+            Event futureEvent = new Event("Come back later for this event", futureDate, "N/A", "N/A", "N/A", 0.00, 0.00, "Ohio");
+            return futureEvent;
         }
         Collections.sort(nextEvent);
         return nextEvent.get(0);
