@@ -4,8 +4,8 @@
       xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/layout.css"/>
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
 
 
     <title>Food Truck Frenzy</title>
@@ -24,9 +24,9 @@
 
 <header>
     <div class="header">
-        <img class="header-pic" src="./images/header-pic.png"/>
+        <img class="header-pic" src="/images/header-pic.png"/>
         <h1>Food Truck Frenzy</h1>
-        <img class="header-pic" src="./images/header-pic.png"/>
+        <img class="header-pic" src="/images/header-pic.png"/>
     </div>
     <!-- <p>Vendor Log-In</p> -->
 </header>
@@ -46,7 +46,7 @@
 </nav>
 
 <div class="food-truck-list">
-    <a th:each="vendor:${vendors}" th:href="@{'/vendors/{name}'}">
+    <a th:each="vendor:${vendors}" th:href="@{'/vendors/'${vendor.name}}">
         <article class="truck-info">
             <div class="truck-image-2"></div>
             <div class="information-2">

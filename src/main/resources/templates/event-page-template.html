@@ -4,8 +4,8 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/layout.css"/>
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
 
     <title>Food Truck Frenzy</title>
 </head>
@@ -21,9 +21,9 @@
 
 <header>
     <div class="header">
-        <img class="header-pic" src="./images/header-pic.png"/>
+        <img class="header-pic" src="/images/header-pic.png"/>
         <h1>Food Truck Frenzy</h1>
-        <img class="header-pic" src="./images/header-pic.png"/>
+        <img class="header-pic" src="/images/header-pic.png"/>
     </div>
 </header>
 
@@ -43,11 +43,11 @@
 
 
 
-<div th:each="events:${events}" class="single-vendor">
+<div class="single-vendor">
     <h2 th:text="${events.name}">Hometown Market</h2>
     <img
             class="ray-ray-pic"
-            src="./images/HometownMarket.jpg"
+            src="/images/HometownMarket.jpg"
             alt="Hometown Market"
     />
 
