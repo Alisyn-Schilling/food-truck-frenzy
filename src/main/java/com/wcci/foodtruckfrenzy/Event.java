@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-public class Event {
+public class Event implements Comparable<Event> {
     @Id
     @GeneratedValue
     private long id;
@@ -21,13 +21,14 @@ public class Event {
     private String times;
     private double latitude;
     private double longitude;
+    private String locationName;
     @ManyToMany(mappedBy = "events")
     private Collection<Vendor> vendors;
 
     protected Event() {
     }
 
-    public Event(String name, LocalDate date, String imagePath, String address, String times, double latitude, double longitude) {
+    public Event(String name, LocalDate date, String imagePath, String address, String times, double latitude, double longitude, String locationName) {
         this.name = name;
         this.date = date;
         this.imagePath = imagePath;
@@ -35,6 +36,7 @@ public class Event {
         this.times = times;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.locationName = locationName;
     }
 
     public String getName() {
@@ -73,6 +75,10 @@ public class Event {
         return imagePath;
     }
 
+    public String getLocationName() {
+        return locationName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -82,13 +88,16 @@ public class Event {
                 Double.compare(event.latitude, latitude) == 0 &&
                 Double.compare(event.longitude, longitude) == 0 &&
                 Objects.equals(name, event.name) &&
+                Objects.equals(date, event.date) &&
+                Objects.equals(imagePath, event.imagePath) &&
                 Objects.equals(address, event.address) &&
-                Objects.equals(times, event.times);
+                Objects.equals(times, event.times) &&
+                Objects.equals(locationName, event.locationName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, date, address, times, latitude, longitude);
+        return Objects.hash(id, name, date, imagePath, address, times, latitude, longitude, locationName);
     }
 
     @Override
@@ -97,10 +106,17 @@ public class Event {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", date=" + date +
+                ", imagePath='" + imagePath + '\'' +
                 ", address='" + address + '\'' +
                 ", times='" + times + '\'' +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
+                ", locationName='" + locationName + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Event event) {
+        return this.date.compareTo(event.getDate());
     }
 }

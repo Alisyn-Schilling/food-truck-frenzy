@@ -50,11 +50,11 @@
             <div class="information">
                 <ul class="home-list">
                     <li><h3>Upcoming Event!</h3></li>
-                    <li><strong>Cousins Maine Lobsters</strong></li>
-                    <li>August 2, 2020</li>
-                    <li>12:00 PM - 5:00 PM</li>
-                    <li>Homestead Beer Co.</li>
-                    <li>811 Irving Wick Dr W, Heath, OH 43056, USA</li>
+                    <li><strong th:text="${event.name}">Cousins Maine Lobsters</strong></li>
+                    <li th:text="${event.date}">August 2, 2020</li>
+                    <li th:text="${event.times}">12:00 PM - 5:00 PM</li>
+                    <li th:text="${event.locationName}">Homestead Beer Co.</li>
+                    <li th:text="${event.address}">811 Irving Wick Dr W, Heath, OH 43056, USA</li>
                 </ul>
             </div>
         </article>

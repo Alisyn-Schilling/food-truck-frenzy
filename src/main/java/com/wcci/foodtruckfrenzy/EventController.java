@@ -31,8 +31,8 @@ public class EventController {
     }
     @PostMapping("/events")
     public String addEvent(String name, LocalDate date, String imagePath, String address, String times, double latitude,
-                           double longitude){
-        Event eventToAdd = new Event(name, date, imagePath, address, times, latitude, longitude);
+                           double longitude, String locationName){
+        Event eventToAdd = new Event(name, date, imagePath, address, times, latitude, longitude, locationName);
         eventStorage.save(eventToAdd);
         return "redirect:/events/" + eventToAdd.getName();
     }

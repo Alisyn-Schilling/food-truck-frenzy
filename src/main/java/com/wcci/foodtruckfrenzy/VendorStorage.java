@@ -6,6 +6,10 @@ import org.springframework.stereotype.Service;
 public class VendorStorage {
     VendorRepository vendorRepo;
 
+    public VendorStorage(VendorRepository vendorRepo) {
+        this.vendorRepo = vendorRepo;
+    }
+
     public Vendor findById(long id) {
         return vendorRepo.findById(id).get();
     }
