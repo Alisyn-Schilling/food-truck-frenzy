@@ -112,7 +112,6 @@ public class Vendor {
 
     public Event getNextEvent() {
         LocalDate date = LocalDate.now();
-        System.out.println(events);
         ArrayList<Event> sortedEvents = new ArrayList<>(events);
         Collections.sort(sortedEvents);
         for (Event event : sortedEvents) {
