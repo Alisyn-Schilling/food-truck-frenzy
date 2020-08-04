@@ -29,13 +29,14 @@ public class LocationController {
         DayOfWeek dayOfWeek = localDate.getDayOfWeek();
         model.addAttribute("locations", locationStorage.getByDayOfWeek(dayOfWeek));
 
-        return null;
+        return "map-template";
     }
     @PostMapping("/locations")
     public String addLocationToVendor(long vendorId, String address, double latitude,
-                                      double longitude, LocalDate date, boolean recurring, String openHours){
+                                      double longitude, String date, boolean recurring, String openHours){
+        LocalDate localDate = LocalDate.parse(date);
         Vendor vendor = vendorStorage.findById(vendorId);
-        Location location = new Location(address, latitude, longitude, date, recurring, openHours, vendor);
+        Location location = new Location(address, latitude, longitude, localDate, recurring, openHours, vendor);
         locationStorage.save(location);
         return "redirect:/admin/" + vendor.getName();
 

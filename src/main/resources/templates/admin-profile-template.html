@@ -76,7 +76,7 @@
         <form action="/locations" method="POST">
             <div class="vendor-input-form">
                 <input type="hidden" th:value="${vendors.id}" name="vendorId"/>
-                <input name="address" type="text" placeholder="Enter Address"/>
+                <input name="address" id="autocomplete" type="text" placeholder="Enter Address"/>
                 <input type="hidden" th:value="0.00" name="latitude"/>
                 <input type="hidden" th:value="0.00" name="longitude"/>
                 <input type="date" name="date"/>
@@ -89,4 +89,9 @@
     </div>
 </div>
 </body>
+<script src="/js/autocomplete.js"></script>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv1a-eDhLKuupUpyXmy0TD9chjD_GZJvg&libraries=places&callback=initAutocomplete"
+        defer
+></script>
 </html>

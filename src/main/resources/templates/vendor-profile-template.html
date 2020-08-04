@@ -65,10 +65,10 @@
             </ul>
         </div>
 
-        <div class="google-map">
-            <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12222.710631860731!2d-83.0119444!3d40.0156472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcdd59ddd5b5cdbbf!2sRay%20Ray&#39;s%20Hog%20Pit%20Clintonville!5e0!3m2!1sen!2sus!4v1595948884722!5m2!1sen!2sus"
-            ></iframe>
+        <div class="google-map" id="map">
+<!--            <iframe-->
+<!--                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12222.710631860731!2d-83.0119444!3d40.0156472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcdd59ddd5b5cdbbf!2sRay%20Ray&#39;s%20Hog%20Pit%20Clintonville!5e0!3m2!1sen!2sus!4v1595948884722!5m2!1sen!2sus"-->
+<!--            ></iframe>-->
         </div>
     </div>
         <div class="upcoming-events">
@@ -78,4 +78,15 @@
         </div>
 </div>
 </body>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    const latitude = /*[[${vendors.getNextLocation().latitude}]]*/ 39.8938155;
+    const longitude = /*[[${vendors.getNextLocation().latitude}]]*/ -83.8087237;
+    /*]]>*/
+</script>
+<script src="/js/map.js"></script>
+<script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv1a-eDhLKuupUpyXmy0TD9chjD_GZJvg&callback=initMap"
+        defer
+></script>
 </html>
