@@ -47,18 +47,17 @@
 
 <div class="single-vendor">
     <h2 th:text="${vendors.name}"></h2>
-    <img th:text="${vendors.imagePath}" class="ray-ray-pic" src="./images/ray-rays.png" alt="Ray Ray"/>
+    <img class="ray-ray-pic" th:src="${vendors.imagePath}" alt="Vendor Image"/>
     <div class="single-vendor-info-layout">
         <div class="single-vendor-info">
             <a th:href="${vendors.menuLink}" href="https://www.rayrayshogpit.com/" target="_blank">Menu Link</a>
             <p th:text="${vendors.getNextLocation().address}">2619 N High St, Columbus, OH 43202</p>
             <p th:text="${vendors.bio}">Bio about Ray Ray</p>
             <ul class="hours">
-                <li  th:each="location :${vendors.getNext7DayLocations()}" th:text="${location.dayOfWeek} ${location.openHours}">Monday - Wednesday: CLOSED</li>
-                <li>Thursday: 11:30am - 8:00pm</li>
-                <li>Friday: 11:30am - 8:00pm</li>
-                <li>Saturday: 11:30am - 8:00pm</li>
-                <li>Sunday: 11:30am - 8:00pm</li>
+                <li th:each="location :${vendors.getNext7DayLocations()}"
+                    th:text="${location.dayOfWeek} ${location.openHours}">
+                </li>
+
             </ul>
         </div>
 
@@ -69,10 +68,12 @@
         </div>
     </div>
 
-    <div class="upcoming-events">
-        <h3>Upcoming Events</h3>
-        <p>No Upcoming Events...</p>
-    </div>
+    <a th:href="@{'/events/'+${vendors.getNextEvent().name}}">
+        <div class="upcoming-events">
+            <h3>Upcoming Events</h3>
+            <p th:text="${vendors.getNextEvent().name}"></p>
+        </div>
+    </a>
 </div>
 </body>
 </html>

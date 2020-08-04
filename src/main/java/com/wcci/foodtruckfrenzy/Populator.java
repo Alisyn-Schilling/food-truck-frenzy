@@ -53,7 +53,7 @@ public class Populator implements CommandLineRunner {
        vendorRepository.save(vendor8);
        Location location8 = new Location("2570 N High St, Columbus, OH 43202", 40.0147579, -83.0110012, date1, true, "12am - 12pm", vendor8);
        locationRepository.save(location8);
-       Vendor vendor9 = new Vendor("The Angry Weiner","Hot Dogs", "https://www.theangrywiener.com/menu", "../../images/angry.png");
+       Vendor vendor9 = new Vendor("The Angry Weiner","Hot Dogs", "https://www.theangrywiener.com/menu", "../../images/wiener.png");
        vendorRepository.save(vendor9);
        Location location9 = new Location("430 N Hamilton Rd, Whitehall, Ohio 43213", 39.9847516, -82.8689632, date1, true, "11:30am - 1:30pm", vendor9);
        locationRepository.save(location9);

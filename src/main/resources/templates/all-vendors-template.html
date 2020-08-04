@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org" lang="en">
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/layout.css"/>
@@ -46,7 +46,7 @@
 </nav>
 
 <div class="food-truck-list">
-    <a th:each="vendor:${vendors}" th:href="@{'/vendors/'${vendor.name}}">
+    <a th:each="vendor:${vendors}" th:href="@{'/vendors/' + ${vendor.name}}">
         <article class="truck-info">
             <div th:style="'background-image: url('+ ${vendor.imagePath} +')'" class="truck-image-2"></div>
             <div class="information-2">
