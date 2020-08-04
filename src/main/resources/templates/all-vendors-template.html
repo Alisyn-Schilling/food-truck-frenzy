@@ -48,7 +48,7 @@
 <div class="food-truck-list">
     <a th:each="vendor:${vendors}" th:href="@{'/vendors/'${vendor.name}}">
         <article class="truck-info">
-            <div class="truck-image-2"></div>
+            <div th:style="'background-image: url('+ ${vendor.imagePath} +')'" class="truck-image-2"></div>
             <div class="information-2">
                 <ul class="home-list">
                     <li><strong th:text="${vendor.name}"> </strong></li>

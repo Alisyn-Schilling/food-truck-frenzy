@@ -26,9 +26,9 @@ public class JpaWiringTest {
     public void EventsCanHaveMultipleVendors() {
         LocalDate date = LocalDate.of(2020, Month.JULY, 30);
         Event testEvent1 = new Event("testEvent1", date, "imagePath",
-                "address1", "times1", 45.23423, 64.1234);
+                "address1", "times1", 45.23423, 64.1234, "name");
         Event testEvent2 = new Event("testEvent2", date, "imagePath2",
-                "address2", "times2", 83.23423, 25.1234);
+                "address2", "times2", 83.23423, 25.1234, "name");
         eventRepo.save(testEvent1);
         eventRepo.save(testEvent2);
         Vendor testVendor = new Vendor("name", "bio", "menuLink",

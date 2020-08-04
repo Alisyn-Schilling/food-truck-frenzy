@@ -118,6 +118,10 @@ public class Vendor {
                 return location;
             }
         }
-        return null;
+
+        Location location = new Location("Come back later for this event", 0.00, 0.00, date, false, "n/a", this );
+        return location;
     }
+
+
 }
