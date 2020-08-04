@@ -109,6 +109,21 @@ public class Vendor {
         return next7Days;
     }
 
+
+    public Event getNextEvent() {
+        LocalDate date = LocalDate.now();
+        ArrayList<Event> sortedEvents = new ArrayList<>(events);
+        Collections.sort(sortedEvents);
+        for (Event event : sortedEvents) {
+            if (event.getDate().compareTo(date) >= 0) {
+                return event;
+            }
+        }
+
+        Event event = new Event("No Upcoming Events", date, "n/a", "n/a", "n/a", 0.00, 0.00, "n/a");
+        return event;
+    }
+
     public Location getNextLocation() {
         LocalDate date = LocalDate.now();
         DayOfWeek dayOfWeek = date.getDayOfWeek();
@@ -118,6 +133,10 @@ public class Vendor {
                 return location;
             }
         }
-        return null;
+
+        Location location = new Location("Come back later for this event", 0.00, 0.00, date, false, "n/a", this);
+        return location;
     }
+
+
 }

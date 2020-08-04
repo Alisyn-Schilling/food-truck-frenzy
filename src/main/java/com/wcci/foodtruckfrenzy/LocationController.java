@@ -22,7 +22,7 @@ public class LocationController {
         DayOfWeek dayOfWeek = localDate.getDayOfWeek();
         model.addAttribute("locations", locationStorage.getByDayOfWeek(dayOfWeek));
 
-        return null;
+        return "map-template";
     }
 
 }

@@ -4,12 +4,12 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/layout.css"/>
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
 
     <title>Food Truck Frenzy</title>
 </head>
-
+<body>
 <div class="vendor-login">
     <p>Vendor Log-In</p>
     <form class="vendor-input">
@@ -21,44 +21,45 @@
 
 <header>
     <div class="header">
-        <img class="header-pic" src="./images/header-pic.png"/>
+        <img class="header-pic" src="/images/header-pic.png"/>
         <h1>Food Truck Frenzy</h1>
-        <img class="header-pic" src="./images/header-pic.png"/>
+        <img class="header-pic" src="/images/header-pic.png"/>
     </div>
 </header>
 
 <nav>
     <ul>
         <li>
-            <a class="nav-bar" href="index.html">Home</a>
+            <a class="nav-bar" th:href="@{'/'}">Home</a>
         </li>
         <li>
-            <a class="nav-bar" href="#">All Food Trucks</a>
+            <a class="nav-bar" th:href="@{'/vendors'}">All Food Trucks</a>
         </li>
         <li>
-            <a class="nav-bar" href="#">Upcoming Events</a>
+            <a class="nav-bar" th:href="@{'/events'}">Upcoming Events</a>
+        </li>
+        <li>
+            <a class="nav-bar" th:href="@{'/locations'}">Today's Locations</a>
         </li>
     </ul>
 </nav>
 
-<body>
 
-<div th:each="events:${events}" class="single-vendor">
+
+<div class="single-vendor">
     <h2 th:text="${events.name}">Hometown Market</h2>
     <img
             class="ray-ray-pic"
-            src="./images/HometownMarket.jpg"
+            src="/images/HometownMarket.jpg"
             alt="Hometown Market"
     />
 
     <div class="single-event-info-layout">
 
         <div class="single-event-info">
-            <p th:text="${events.date}" th:text="${events.address}" th:text="${events.times}">
-                July 29 <br/>
-                3895 Columbus Road <br/>
-                3pm-8pm
-            </p>
+            <p th:text="${events.date}"> </p><br/>
+            <p th:text="${events.address}"> </p><br/>
+            <p th:text="${events.times}"> </p><br/>
             <h3>Food Trucks</h3>
             <ul th:each="vendor:${events.vendors}" class="hours">
                 <li th:text="${vendor.name}">Schmidt's Food Truck</li>

@@ -4,8 +4,8 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/layout.css"/>
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
 
     <title>Food Truck Frenzy</title>
 </head>
@@ -23,9 +23,9 @@
 
 <header>
     <div class="header">
-        <img class="header-pic" src="./images/header-pic.png"/>
+        <img class="header-pic" src="/images/header-pic.png"/>
         <h1>Food Truck Frenzy</h1>
-        <img class="header-pic" src="./images/header-pic.png"/>
+        <img class="header-pic" src="/images/header-pic.png"/>
     </div>
     <!-- <p>Vendor Log-In</p> -->
 </header>
@@ -33,19 +33,22 @@
 <nav>
     <ul>
         <li>
-            <a class="nav-bar" href="index.html">Home</a>
+            <a class="nav-bar" th:href="@{'/'}">Home</a>
         </li>
         <li>
-            <a class="nav-bar" href="#">All Food Trucks</a>
+            <a class="nav-bar" th:href="@{'/vendors'}">All Food Trucks</a>
         </li>
         <li>
-            <a class="nav-bar" href="#">Upcoming Events</a>
+            <a class="nav-bar" th:href="@{'/events'}">Upcoming Events</a>
+        </li>
+        <li>
+            <a class="nav-bar" th:href="@{'/locations'}">Today's Locations</a>
         </li>
     </ul>
 </nav>
 
-<div class="food-truck-list">
-    <a th:each="event:${events}" href="#">
+<div class="food-truck-list" th:each="event:${events}">
+    <a th:href="@{'/events/'+${event.name}}">
         <article class="truck-info">
             <div class="truck-image-1"></div>
             <div class="information">

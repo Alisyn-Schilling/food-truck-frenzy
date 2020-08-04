@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org" lang="en">
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/layout.css"/>
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
 
 
     <title>Food Truck Frenzy</title>
@@ -24,9 +24,9 @@
 
 <header>
     <div class="header">
-        <img class="header-pic" src="./images/header-pic.png"/>
+        <img class="header-pic" src="/images/header-pic.png"/>
         <h1>Food Truck Frenzy</h1>
-        <img class="header-pic" src="./images/header-pic.png"/>
+        <img class="header-pic" src="/images/header-pic.png"/>
     </div>
     <!-- <p>Vendor Log-In</p> -->
 </header>
@@ -34,21 +34,24 @@
 <nav>
     <ul>
         <li>
-            <a class="nav-bar" href="index.html">Home</a>
+            <a class="nav-bar" th:href="@{'/'}">Home</a>
         </li>
         <li>
-            <a class="nav-bar" href="all-vendors-page.html">All Food Trucks</a>
+            <a class="nav-bar" th:href="@{'/vendors'}">All Food Trucks</a>
         </li>
         <li>
-            <a class="nav-bar" href="all-events-page.html">Upcoming Events</a>
+            <a class="nav-bar" th:href="@{'/events'}">Upcoming Events</a>
+        </li>
+        <li>
+            <a class="nav-bar" th:href="@{'/locations'}">Today's Locations</a>
         </li>
     </ul>
 </nav>
 
 <div class="food-truck-list">
-    <a th:each="vendor:${vendors}" href="#">
+    <a th:each="vendor:${vendors}" th:href="@{'/vendors/' + ${vendor.name}}">
         <article class="truck-info">
-            <div class="truck-image-2"></div>
+            <div th:style="'background-image: url('+ ${vendor.imagePath} +')'" class="truck-image-2"></div>
             <div class="information-2">
                 <ul class="home-list">
                     <li><strong th:text="${vendor.name}"> </strong></li>
