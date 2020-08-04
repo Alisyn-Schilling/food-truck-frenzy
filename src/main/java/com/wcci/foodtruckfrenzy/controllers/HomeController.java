@@ -1,5 +1,6 @@
-package com.wcci.foodtruckfrenzy;
+package com.wcci.foodtruckfrenzy.controllers;
 
+import com.wcci.foodtruckfrenzy.storage.EventStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -16,8 +16,7 @@
     <form class="vendor-input">
         <input type="text" placeholder="Enter Vendor Name"/>
         <input type="password" placeholder="Enter Password"/>
-        <a th:href="@{'/new-vendor'}">
-            <button type="button">Submit</button></a>
+        <button type="button">Submit</button>
     </form>
 </div>
 
@@ -69,10 +68,25 @@
         </div>
     </div>
         <div class="upcoming-events">
-            <h3>Upcoming Events</h3>
+            <h3>Upcoming Events test</h3>
             <a th:href="@{'/events/'+${vendors.getNextEvent().name}}">
             <p th:text="${vendors.getNextEvent().name}"></p></a>
         </div>
+    <div class="vendor-edit-form">
+        <form action="/locations" method="POST">
+            <div class="vendor-input-form">
+                <input type="hidden" th:value="${vendors.id}" name="vendorId"/>
+                <input name="address" type="text" placeholder="Enter Address"/>
+                <input type="hidden" th:value="0.00" name="latitude"/>
+                <input type="hidden" th:value="0.00" name="longitude"/>
+                <input type="date" name="date"/>
+                <input type="text" name="openHours" placeholder="Open Hours"/>
+                <label for="recurring">Recurring Weekly:</label>
+                <input name="recurring" type="checkbox" id="recurring"/>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
 </div>
 </body>
 </html>

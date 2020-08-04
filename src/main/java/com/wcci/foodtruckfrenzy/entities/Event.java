@@ -1,12 +1,12 @@
-package com.wcci.foodtruckfrenzy;
+package com.wcci.foodtruckfrenzy.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
-import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -77,6 +77,11 @@ public class Event implements Comparable<Event> {
 
     public String getLocationName() {
         return locationName;
+    }
+
+    public String getDateString(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+        return date.format(formatter);
     }
 
     @Override

@@ -18,7 +18,8 @@
     <form class="vendor-input">
         <input type="text" placeholder="Enter Vendor Name"/>
         <input type="password" placeholder="Enter Password"/>
-        <button type="button">Submit</button>
+        <a th:href="@{'/new-vendor'}">
+            <button type="button">Submit</button></a>
     </form>
 </div>
 
@@ -46,27 +47,18 @@
 
 <h2>New Vendor Form</h2>
 <div class="vendor-edit-form">
-    <form>
+    <form action="/vendors" method="POST">
         <div class="vendor-input-form">
-            <input type="text" placeholder="Enter Vendor Name"/>
-            <input type="text" placeholder="Enter Vendor Image"/>
-            <input type="text" placeholder="Enter Vendor Address"/>
+            <input name="name" type="text" placeholder="Enter Vendor Name"/>
+            <input name="imagePath" type="text" placeholder="Enter Vendor Image"/>
+            <input name="menuLink" type="text" placeholder="Enter Menu Link"/>
             <input
+                    name="bio"
                     class="vendor-bio"
                     type="text"
                     placeholder="Enter Vendor Biography"
             />
-            <input
-                    class="vendor-bio"
-                    type="text"
-                    placeholder="Enter Vendor Hours"
-            />
-            <input
-                    class="vendor-bio"
-                    type="text"
-                    placeholder="Enter Vendor Upcoming Events"
-            />
-            <button type="button">Submit</button>
+            <button type="submit">Submit</button>
         </div>
     </form>
 </div>

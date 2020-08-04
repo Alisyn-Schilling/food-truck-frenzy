@@ -1,4 +1,4 @@
-package com.wcci.foodtruckfrenzy;
+package com.wcci.foodtruckfrenzy.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
 import java.util.Objects;
 
 @Entity
@@ -68,6 +70,11 @@ public class Location implements Comparable<Location>{
 
     public DayOfWeek getDayOfWeek() {
         return dayOfWeek;
+    }
+
+    public String getDayOfWeekString() {
+        return dayOfWeek.getDisplayName(TextStyle.FULL,
+                Locale.getDefault());
     }
 
     public boolean isRecurring() {
