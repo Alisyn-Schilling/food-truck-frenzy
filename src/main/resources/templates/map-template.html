@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/layout.css"/>
     <link rel="stylesheet" href="/css/style.css"/>
+
 
     <title>Food Truck Frenzy</title>
 </head>
@@ -17,8 +18,7 @@
     <form class="vendor-input">
         <input type="text" placeholder="Enter Vendor Name"/>
         <input type="password" placeholder="Enter Password"/>
-        <a th:href="@{'/new-vendor'}">
-            <button type="button">Submit</button></a>
+        <button type="button">Submit</button>
     </form>
 </div>
 
@@ -28,6 +28,7 @@
         <h1>Food Truck Frenzy</h1>
         <img class="header-pic" src="/images/header-pic.png"/>
     </div>
+    <!-- <p>Vendor Log-In</p> -->
 </header>
 
 <nav>
@@ -47,23 +48,10 @@
     </ul>
 </nav>
 
-<div class="upcoming-event-main">
-    <a href="#">
-        <article class="event-main">
-            <div class="main-event-pic"></div>
-            <div class="information">
-                <ul class="home-list">
-                    <li><h3>Upcoming Event!</h3></li>
-                    <li><strong th:text="${event.name}">Cousins Maine Lobsters</strong></li>
-                    <li th:text="${event.getDateString()}">August 2, 2020</li>
-                    <li th:text="${event.times}">12:00 PM - 5:00 PM</li>
-                    <li th:text="${event.locationName}">Homestead Beer Co.</li>
-                    <li th:text="${event.address}">811 Irving Wick Dr W, Heath, OH 43056, USA</li>
-                </ul>
-            </div>
-        </article>
-    </a>
+<h2>Today's Locations</h2>
+<div class="map-container">
+    <iframe class="map" src="https://www.google.com/maps/d/u/0/embed?mid=1QFVso-TBWrI4O7XI0eYIp63H9VB_j8Hi"></iframe>
 </div>
+
 </body>
 </html>
-
