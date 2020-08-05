@@ -48,7 +48,7 @@
 </nav>
 
 <div class="upcoming-event-main">
-    <a href="#">
+    <a th:href="@{'/events/' + ${event.name}}">
         <article class="event-main">
             <div class="main-event-pic"></div>
             <div class="information">
