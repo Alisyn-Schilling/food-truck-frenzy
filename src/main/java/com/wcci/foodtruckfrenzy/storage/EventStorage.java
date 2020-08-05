@@ -1,11 +1,12 @@
-package com.wcci.foodtruckfrenzy;
+package com.wcci.foodtruckfrenzy.storage;
 
+import com.wcci.foodtruckfrenzy.entities.Event;
+import com.wcci.foodtruckfrenzy.storage.repositories.EventRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 @Service

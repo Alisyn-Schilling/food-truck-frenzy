@@ -1,5 +1,11 @@
 package com.wcci.foodtruckfrenzy;
 
+import com.wcci.foodtruckfrenzy.entities.Event;
+import com.wcci.foodtruckfrenzy.entities.Location;
+import com.wcci.foodtruckfrenzy.entities.Vendor;
+import com.wcci.foodtruckfrenzy.storage.repositories.EventRepository;
+import com.wcci.foodtruckfrenzy.storage.repositories.LocationRepository;
+import com.wcci.foodtruckfrenzy.storage.repositories.VendorRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -7,7 +13,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.Date;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

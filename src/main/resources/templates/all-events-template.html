@@ -17,7 +17,8 @@
     <form class="vendor-input">
         <input type="text" placeholder="Enter Vendor Name"/>
         <input type="password" placeholder="Enter Password"/>
-        <button type="button">Submit</button>
+        <a th:href="@{'/new-vendor'}">
+        <button type="button">Submit</button></a>
     </form>
 </div>
 
@@ -55,7 +56,7 @@
                 <ul class="home-list">
                     <li><strong th:text="${event.name}"></strong></li>
                     <li th:text="${event.address}"></li>
-                    <li th:text="${event.date}"></li>
+                    <li th:text="${event.getDateString()}"></li>
                     <li th:text="${event.times}"></li>
                 </ul>
             </div>

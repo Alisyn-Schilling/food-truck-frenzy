@@ -1,5 +1,7 @@
-package com.wcci.foodtruckfrenzy;
+package com.wcci.foodtruckfrenzy.storage;
 
+import com.wcci.foodtruckfrenzy.entities.Location;
+import com.wcci.foodtruckfrenzy.storage.repositories.LocationRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.DayOfWeek;

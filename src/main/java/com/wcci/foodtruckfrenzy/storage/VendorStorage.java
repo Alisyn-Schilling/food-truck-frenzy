@@ -1,5 +1,7 @@
-package com.wcci.foodtruckfrenzy;
+package com.wcci.foodtruckfrenzy.storage;
 
+import com.wcci.foodtruckfrenzy.entities.Vendor;
+import com.wcci.foodtruckfrenzy.storage.repositories.VendorRepository;
 import org.springframework.stereotype.Service;
 
 @Service

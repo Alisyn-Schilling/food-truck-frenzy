@@ -1,5 +1,9 @@
-package com.wcci.foodtruckfrenzy;
+package com.wcci.foodtruckfrenzy.controllers;
 
+import com.wcci.foodtruckfrenzy.entities.Event;
+import com.wcci.foodtruckfrenzy.storage.EventStorage;
+import com.wcci.foodtruckfrenzy.entities.Vendor;
+import com.wcci.foodtruckfrenzy.storage.VendorStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,11 +32,11 @@ public class VendorController {
         return "vendor-profile-template";
     }
     @PostMapping("/vendors")
-    public String addVendor(String name, String menuLink, String address,
+    public String addVendor(String name, String bio, String menuLink,
                             String imagePath){
-        Vendor vendorToAdd = new Vendor(name, menuLink, address, imagePath);
+        Vendor vendorToAdd = new Vendor(name, bio, menuLink, imagePath);
         vendorStorage.save(vendorToAdd);
-        return "redirect:/vendors/" + vendorToAdd.getName();
+        return "redirect:/admin/" + vendorToAdd.getName();
     }
     @PostMapping("/vendors/events")
     public String addEventToVendor(long id, String eventName){

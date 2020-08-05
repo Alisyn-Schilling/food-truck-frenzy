@@ -15,7 +15,8 @@
     <form class="vendor-input">
         <input type="text" placeholder="Enter Vendor Name"/>
         <input type="password" placeholder="Enter Password"/>
-        <button type="button">Submit</button>
+        <a th:href="@{'/new-vendor'}">
+            <button type="button">Submit</button></a>
     </form>
 </div>
 
@@ -57,7 +58,7 @@
     <div class="single-event-info-layout">
 
         <div class="single-event-info">
-            <p th:text="${events.date}"> </p><br/>
+            <p th:text="${events.getDateString()}"> </p><br/>
             <p th:text="${events.address}"> </p><br/>
             <p th:text="${events.times}"> </p><br/>
             <h3>Food Trucks</h3>
@@ -66,12 +67,21 @@
             </ul>
         </div>
 
-        <div class="google-map">
-            <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3042.8913117190314!2d-82.70569313510926!3d40.300372170632784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88384e4321116839%3A0x37f7e93868f6a0e3!2s3895%20Columbus%20Rd%2C%20Centerburg%2C%20OH%2043011!5e0!3m2!1sen!2sus!4v1595951867063!5m2!1sen!2sus"
-            ></iframe>
+        <div class="google-map" id="map">
+
         </div>
     </div>
 </div>
 </body>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    const latitude = /*[[${events.latitude}]]*/ 39.8938155;
+    const longitude = /*[[${events.longitude}]]*/ -83.8087237;
+    /*]]>*/
+</script>
+<script src="/js/map.js"></script>
+<script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv1a-eDhLKuupUpyXmy0TD9chjD_GZJvg&callback=initMap"
+        defer
+></script>
 </html>

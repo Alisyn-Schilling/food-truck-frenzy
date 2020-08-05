@@ -1,5 +1,11 @@
 package com.wcci.foodtruckfrenzy;
 
+import com.wcci.foodtruckfrenzy.entities.Event;
+import com.wcci.foodtruckfrenzy.entities.Location;
+import com.wcci.foodtruckfrenzy.entities.Vendor;
+import com.wcci.foodtruckfrenzy.storage.repositories.EventRepository;
+import com.wcci.foodtruckfrenzy.storage.repositories.LocationRepository;
+import com.wcci.foodtruckfrenzy.storage.repositories.VendorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -18,10 +24,10 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        LocalDate date1 = LocalDate.of(2020, Month.AUGUST, 31);
-        Event event1 = new Event("Super Fun Event", date1, "../../images/HometownMarket.jpg", "3895 Columbus Rd", "3:00PM - 8:00PM", 40.3002819, -82.7057998, "Hometown Market");
+        LocalDate date1 = LocalDate.of(2020, 8, 6);
+        Event event1 = new Event("Super Fun Event", LocalDate.of(2020, Month.AUGUST, 31), "../../images/HometownMarket.jpg", "3895 Columbus Rd", "3:00PM - 8:00PM", 40.3002819, -82.7057998, "Hometown Market");
         eventRepository.save(event1);
-        Vendor vendor1 = new Vendor("Louisiana Grill", "Sara T's Favorite Food Truck in the Entire World yum yum yum cajun food", "http://www.louisiana-grill.com/menu_festival.html", "../../images/LouisianaGrill.png");
+        Vendor vendor1 = new Vendor("Louisiana Grill", "Sara T's Favorite Food Truck in the Entire World yum yum yum cajun food", "http://www.louisiana-grill.com/menu_festival.html", "../../images/LouisianaGrill.png", event1);
         vendorRepository.save(vendor1);
         Location location1 = new Location("209 E Leffel Ln, Springfield, Ohio 45505", 39.8938155, -83.8087237, date1, true, "11:00AM - 5:30PM", vendor1);
         locationRepository.save(location1);

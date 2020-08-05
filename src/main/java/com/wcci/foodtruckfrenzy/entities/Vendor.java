@@ -1,4 +1,4 @@
-package com.wcci.foodtruckfrenzy;
+package com.wcci.foodtruckfrenzy.entities;
 
 import javax.persistence.*;
 import java.time.DayOfWeek;
@@ -115,12 +115,12 @@ public class Vendor {
         ArrayList<Event> sortedEvents = new ArrayList<>(events);
         Collections.sort(sortedEvents);
         for (Event event : sortedEvents) {
-            if (event.getDate().compareTo(date) >= 0) {
+            if (event.getDate().isAfter(date.minusDays(1))) {
                 return event;
             }
         }
 
-        Event event = new Event("No Upcoming Events", date, "n/a", "n/a", "n/a", 0.00, 0.00, "n/a");
+        Event event = new Event("No Upcoming Events", date, "n/a", "n/a", "n/a", 39.9612, -82.9988, "n/a");
         return event;
     }
 
@@ -134,7 +134,7 @@ public class Vendor {
             }
         }
 
-        Location location = new Location("Come back later for this event", 0.00, 0.00, date, false, "n/a", this);
+        Location location = new Location("Come back later for this event", 39.9612, -82.9988, date, false, "n/a", this);
         return location;
     }
 
