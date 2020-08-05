@@ -1,224 +1,251 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 article {
-  display: flex;
-  margin: 15px;
-  width: 600px;
-  height: 250px;
-  border-radius: 20px;
+    display: flex;
+    margin: 15px;
+    width: 600px;
+    height: 250px;
+    border-radius: 20px;
 }
 
 article div {
-  margin: 15px;
+    margin: 15px;
 }
 
 .event-main {
-  padding: 0;
+    padding: 0;
 }
+
+.calender {
+    display: flex;
+    justify-content: center;
+}
+
 .food-truck-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .food-truck-list a {
-  margin: 15px;
-  width: 600px;
-  height: 250px;
-  border-radius: 20px;
+    margin: 15px;
+    width: 600px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+.google-calender {
+    width: 500px;
+    height: 600px;
+    padding: 10px;
+
 }
 
 h1 {
-  margin: 10px;
-  text-align: center;
-  padding: 10px;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
 }
 
 h2 {
-  text-align: center;
-  padding: 10px;
+    text-align: center;
+    padding: 10px;
 }
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header {
-  display: flex;
+    display: flex;
 }
 
 .header-pic {
-  padding: 10px;
-  width: 150px;
-  height: auto;
+    padding: 10px;
+    width: 150px;
+    height: auto;
 }
 
 .home-list li {
-  padding: 5px;
+    padding: 5px;
 }
 
 iframe {
-  height: 270px;
-  width: 500px;
-  border-style: none;
-  border-radius: 20px;
+    height: 270px;
+    width: 500px;
+    border-style: none;
+    border-radius: 20px;
 }
 
 .google-map {
-  margin-top: 10px;
-  margin: 10px;
-  display: flex;
-  height: 270px;
-  width: 500px;
-  border-style: none;
-  border-radius: 20px;
+
+    display: flex;
+
+    border-style: none;
+    border-radius: 20px;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
+.map-page {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
 }
 
 nav li {
-  padding: 5px;
-  font-size: 20px;
+    padding: 5px;
+    font-size: 20px;
 }
 
 nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+.new-vendor-edit-form {
+    display: flex;
+    padding: 10px;
+    margin: 0 auto;
+    justify-content: center;
+    width: 600px;
+    border-radius: 20px;
 }
 
 .single-event-info {
-  padding: 5px;
-  border-radius: 20px;
-  height: 250px;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-  text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    height: 250px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    text-align: center;
 }
 
 .single-event-info-layout {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .single-vendor {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .single-vendor-info {
-  padding: 10px;
-  border-radius: 20px;
-  height: 250px;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    height: 250px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
 }
 
 .single-vendor-info-layout {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 p {
-  padding: 5px;
+    padding: 5px;
 }
 
 .ray-ray-pic {
-  border-radius: 20px;
-  padding: 10px;
-  width: 600px;
-  display: flex;
-  align-items: center;
+    border-radius: 20px;
+    padding: 10px;
+    width: 600px;
+    display: flex;
+    align-items: center;
 }
 
 .upcoming-events {
-  margin-top: 10px;
-  padding: 10px;
-  width: 650px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    width: 650px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .upcoming-event-main {
-  display: flex;
-  width: 700px;
-  height: 350px;
-  border-radius: 20px;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  margin-top: 20px;
+    display: flex;
+    width: 700px;
+    height: 350px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 .vendor-bio {
-  height: 50px;
-  width: 400px;
+    height: 50px;
+    width: 400px;
 }
 
 .vendor-edit-form {
-  display: flex;
-  padding: 10px;
-  margin: 0 auto;
-  justify-content: center;
-  width: 600px;
-  border-radius: 20px;
+    display: flex;
+    padding: 10px;
+    margin: 0 auto;
+    justify-content: center;
+    width: 600px;
+    border-radius: 20px;
 }
 
 .vendor-input {
-  position: relative;
-  display: none;
-  text-align: center;
-  padding: 10px;
-  border-radius: 20px;
+    position: relative;
+    display: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .vendor-input-form {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  width: 300px;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 300px;
+    align-items: center;
 }
 
 .vendor-input-form input {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 5px;
-  justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    justify-content: center;
+    width: 250px;
 }
 
 .vendor-input input {
-  text-align: center;
+    text-align: center;
 }
 
 .vendor-login:hover .vendor-input {
-  display: block;
+    display: block;
 }
 
 .vendor-login {
-  display: center;
-  position: absolute;
-  width: 200px;
-  text-align: center;
+
+    position: absolute;
+    width: 200px;
+    text-align: center;
+}
+
+.upcoming-events {
+    margin-bottom: 10px;
 }
