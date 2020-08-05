@@ -61,10 +61,10 @@
             </ul>
         </div>
 
-        <div class="google-map">
-            <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12222.710631860731!2d-83.0119444!3d40.0156472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcdd59ddd5b5cdbbf!2sRay%20Ray&#39;s%20Hog%20Pit%20Clintonville!5e0!3m2!1sen!2sus!4v1595948884722!5m2!1sen!2sus"
-            ></iframe>
+        <div class="google-map" id="map">
+<!--            <iframe-->
+<!--                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12222.710631860731!2d-83.0119444!3d40.0156472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcdd59ddd5b5cdbbf!2sRay%20Ray&#39;s%20Hog%20Pit%20Clintonville!5e0!3m2!1sen!2sus!4v1595948884722!5m2!1sen!2sus"-->
+<!--            ></iframe>-->
         </div>
     </div>
         <div class="upcoming-events">
@@ -75,12 +75,12 @@
     <div class="vendor-edit-form">
         <form action="/locations" method="POST">
             <div class="vendor-input-form">
-                <input type="hidden" th:value="${vendors.id}" name="vendorId"/>
-                <input name="address" id="autocomplete" type="text" placeholder="Enter Address"/>
-                <input type="hidden" th:value="0.00" name="latitude"/>
-                <input type="hidden" th:value="0.00" name="longitude"/>
-                <input type="date" name="date"/>
-                <input type="text" name="openHours" placeholder="Open Hours"/>
+                <input type="hidden" th:value="${vendors.id}" name="vendorId" required/>
+                <input name="address" id="autocomplete" type="text" placeholder="Enter Address" onFocus="geolocate()" required/>
+                <input type="hidden" name="latitude" id="latitude" required/>
+                <input type="hidden" name="longitude" id="longitude" required/>
+                <input type="date" name="date" required/>
+                <input type="text" name="openHours" placeholder="Open Hours" required/>
                 <label for="recurring">Recurring Weekly:</label>
                 <input name="recurring" type="checkbox" id="recurring"/>
                 <button type="submit">Submit</button>
@@ -89,6 +89,12 @@
     </div>
 </div>
 </body>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    const latitude = /*[[${vendors.getNextLocation().latitude}]]*/ 39.8938155;
+    const longitude = /*[[${vendors.getNextLocation().longitude}]]*/ -83.8087237;
+    /*]]>*/
+</script>
 <script src="/js/autocomplete.js"></script>
 <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv1a-eDhLKuupUpyXmy0TD9chjD_GZJvg&libraries=places&callback=initAutocomplete"
