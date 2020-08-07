@@ -32,7 +32,6 @@ public class EventController {
     }
     @GetMapping("/events/{name}")
     public String findByName(@PathVariable String name, Model model){
-        model.addAttribute("vendors", vendorStorage.getAllVendors());
         model.addAttribute("events", eventStorage.findByName(name));
         return "event-page-template";
     }

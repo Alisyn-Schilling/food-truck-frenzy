@@ -44,7 +44,7 @@ public class VendorController {
         Event event = eventStorage.findById(eventId);
         vendor.addEvent(event);
         vendorStorage.save(vendor);
-        return "redirect:/events/" + event.getName();
+        return "redirect:/admin/events/" + event.getName();
     }
 
 }

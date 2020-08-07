@@ -40,6 +40,17 @@ button {
     background-color: var(--color1-pale-silver);
     border-radius: 20px;
     outline: none;
+    cursor: pointer;
+}
+
+.event-form-button {
+    background-color: var(--color4-portland-orange);
+    width: 620px;
+}
+
+.event-link {
+    display: flex;
+    justify-content: center;
 }
 
 .food-truck-list a {
@@ -115,6 +126,20 @@ nav li:hover {
     font-family: var(--content-font);
 }
 
+.event-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 200px;
+}
+
+.vendor-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 200px;
+}
+
 .food-truck-list a:nth-child(even) {
     background-color: var(--color4-portland-orange);
 }
@@ -123,29 +148,6 @@ nav li:hover {
     background-color: var(--color3-red-orange-color-wheel);
 }
 
-.truck-image-1 {
-    background-image: url(../../../../../images/exotic-latino-grill.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 200px;
-}
-
-.truck-image-2 {
-    background-image: url(../../../../../images/ray-rays.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 200px;
-}
-
-.truck-image-3 {
-    background-image: url(../../../../../images/schmidts.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 200px;
-}
 
 .upcoming-events {
     background-color: var(--color4-portland-orange);

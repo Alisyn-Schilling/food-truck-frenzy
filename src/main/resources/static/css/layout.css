@@ -96,7 +96,6 @@ iframe {
     margin-top: 15px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     justify-content: space-evenly;
 }
 
@@ -191,8 +190,7 @@ p {
     border-radius: 20px;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 20px auto 0;
 }
 
 .vendor-bio {
@@ -227,7 +225,6 @@ p {
 
 .vendor-input-form input {
     display: flex;
-    justify-content: space-between;
     margin: 5px;
     justify-content: center;
     width: 250px;
