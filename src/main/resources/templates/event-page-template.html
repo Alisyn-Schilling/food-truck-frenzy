@@ -16,7 +16,8 @@
         <input type="text" placeholder="Enter Vendor Name"/>
         <input type="password" placeholder="Enter Password"/>
         <a th:href="@{'/new-vendor'}">
-            <button type="button">Submit</button></a>
+            <button type="button">Submit</button>
+        </a>
     </form>
 </div>
 
@@ -46,21 +47,19 @@
 </nav>
 
 
-
 <div class="single-vendor">
     <h2 th:text="${events.name}">Hometown Market</h2>
-    <img
-            class="ray-ray-pic"
-            src="/images/HometownMarket.jpg"
-            alt="Hometown Market"
+    <img th:src="${events.imagePath}"
+         class="ray-ray-pic"
+         alt="Event Picture"
     />
 
     <div class="single-event-info-layout">
 
         <div class="single-event-info">
-            <p th:text="${events.getDateString()}"> </p><br/>
-            <p th:text="${events.address}"> </p><br/>
-            <p th:text="${events.times}"> </p><br/>
+            <p th:text="${events.getDateString()}"></p><br/>
+            <p th:text="${events.address}"></p><br/>
+            <p th:text="${events.times}"></p><br/>
             <h3>Food Trucks</h3>
             <ul th:each="vendor:${events.vendors}" class="hours">
                 <li th:text="${vendor.name}">Schmidt's Food Truck</li>

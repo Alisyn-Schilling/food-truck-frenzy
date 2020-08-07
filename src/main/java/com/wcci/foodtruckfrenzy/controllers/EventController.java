@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
 
 @Controller
 public class EventController {
@@ -23,7 +25,9 @@ public class EventController {
 
     @GetMapping("/events")
     public String showAllEvents(Model model){
-        model.addAttribute("events", eventStorage.getAllEvents());
+        ArrayList<Event> sortedEvents = new ArrayList<>(eventStorage.getAllEvents());
+        Collections.sort(sortedEvents);
+        model.addAttribute("events", sortedEvents);
         return "all-events-template";
     }
     @GetMapping("/events/{name}")

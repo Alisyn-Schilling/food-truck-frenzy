@@ -83,9 +83,9 @@ iframe {
 }
 
 .google-map {
-
+    height: 270px;
+    width: 500px;
     display: flex;
-
     border-style: none;
     border-radius: 20px;
 }
