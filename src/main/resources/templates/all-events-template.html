@@ -51,7 +51,7 @@
 <div class="food-truck-list" th:each="event:${events}">
     <a th:href="@{'/events/'+${event.name}}">
         <article class="truck-info">
-            <div class="truck-image-1"></div>
+            <div  th:style="'background-image: url('+ ${event.imagePath} +')'"class="truck-image-1"></div>
             <div class="information">
                 <ul class="home-list">
                     <li><strong th:text="${event.name}"></strong></li>

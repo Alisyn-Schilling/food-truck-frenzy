@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 
 @Service
@@ -21,8 +22,8 @@ public class EventStorage {
         return eventRepo.findByName(eventName);
     }
 
-    public Iterable<Event> getAllEvents() {
-        return eventRepo.findAll();
+    public Collection<Event> getAllEvents() {
+        return (Collection<Event>) eventRepo.findAll();
     }
 
     public void save(Event event) {

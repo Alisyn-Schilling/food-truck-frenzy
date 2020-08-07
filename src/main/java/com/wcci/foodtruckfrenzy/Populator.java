@@ -24,7 +24,7 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        LocalDate date1 = LocalDate.of(2020, 8, 6);
+        LocalDate date1 = LocalDate.of(2020, 8,9 );
         Event event1 = new Event("Super Fun Event", LocalDate.of(2020, Month.AUGUST, 31), "../../images/HometownMarket.jpg", "3895 Columbus Rd, Centerburg, Ohio 43011", "3:00pm - 8:00pm", 40.3002819, -82.7057998, "Hometown Market");
         eventRepository.save(event1);
         Event event2 = new Event("2020 Columbus Summer Wine Festival", LocalDate.of(2020, Month.AUGUST, 22), "../../images/ColumbusSummerWineFestival.jpg", "160 S. High Street, Columbus, Ohio 43215", "12:00pm - 8:00pm", 39.9688641, -83.0562056, "John F. Wolfe Columbus Commons");
@@ -33,7 +33,7 @@ public class Populator implements CommandLineRunner {
         eventRepository.save(event3);
         Event event4 = new Event("New Birth: Movie on the Lawn", LocalDate.of(2020, Month.AUGUST, 20), "../../images/MovieOnTheLawn.jpg", "3475 Refugee Road, Columbus, Ohio 43232", "7:00pm - 11:00pm", 39.952106, -83.0268608, "New Birth Christian Ministries");
         eventRepository.save(event4);
-        Event event5 = new Event("Rockmill Brewery Summer Music Series: Charles & McKevitt", LocalDate.of(2020, Month.AUGUST, 16), "../../images/RockmillBrewery.jpg", "5705 Lithopolis Road Northwest", "5:00pm - 7:00pm", 39.8694521, -83.0347285, "Rockmill Brewery");
+        Event event5 = new Event("Rockmill Brewery Summer Music Series: Charles & McKevitt", LocalDate.of(2020, Month.AUGUST, 16), "../../images/RockmillBrewery.jpg", "5705 Lithopolis Road Northwest, Lancaster, Ohio 43130", "5:00pm - 7:00pm", 39.8694521, -83.0347285, "Rockmill Brewery");
         eventRepository.save(event5);
         Event event6 = new Event("Reynoldsburg Festival", LocalDate.of(2020, Month.AUGUST, 8), "../../images/ReynoldsburgFestival.jpg", "1636 Graham Road, Reynoldsburg, Ohio 43068", "6:00pm - 8:00pm", 39.9713941, -83.0033249, "Reynoldsburg United Methodist Church");
         eventRepository.save(event6);
