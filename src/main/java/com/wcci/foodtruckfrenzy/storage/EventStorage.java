@@ -46,4 +46,8 @@ public class EventStorage {
         Collections.sort(nextEvent);
         return nextEvent.get(0);
     }
+
+    public Event findById(long eventId) {
+        return eventRepo.findById(eventId).get();
+    }
 }

@@ -57,9 +57,9 @@
     <div class="single-event-info-layout">
 
         <div class="single-event-info">
-            <p th:text="${events.getDateString()}"></p><br/>
-            <p th:text="${events.address}"></p><br/>
-            <p th:text="${events.times}"></p><br/>
+            <p th:text="${events.getDateString()}"></p>
+            <p th:text="${events.address}"></p>
+            <p th:text="${events.times}"></p><br />
             <h3>Food Trucks</h3>
             <ul th:each="vendor:${events.vendors}" class="hours">
                 <li th:text="${vendor.name}">Schmidt's Food Truck</li>
@@ -69,6 +69,20 @@
         <div class="google-map" id="map">
 
         </div>
+    </div>
+    <div class="vendor-edit-form">
+        <form action="/vendors/events" method="POST">
+            <div class="vendor-input-form">
+                <input type="hidden" th:value="${events.id}" name="eventId" required>
+                <select name="vendorId">
+                    <option th:each="vendor:${vendors}" th:value="${vendor.id}" th:text="${vendor.name}">
+
+                    </option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     </div>
 </div>
 </body>

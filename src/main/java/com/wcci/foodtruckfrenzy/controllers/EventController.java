@@ -32,13 +32,15 @@ public class EventController {
     }
     @GetMapping("/events/{name}")
     public String findByName(@PathVariable String name, Model model){
+        model.addAttribute("vendors", vendorStorage.getAllVendors());
         model.addAttribute("events", eventStorage.findByName(name));
         return "event-page-template";
     }
     @PostMapping("/events")
-    public String addEvent(String name, LocalDate date, String imagePath, String address, String times, double latitude,
+    public String addEvent(String name, String date, String imagePath, String address, String times, double latitude,
                            double longitude, String locationName){
-        Event eventToAdd = new Event(name, date, imagePath, address, times, latitude, longitude, locationName);
+        LocalDate localDate = LocalDate.parse(date);
+        Event eventToAdd = new Event(name, localDate, imagePath, address, times, latitude, longitude, locationName);
         eventStorage.save(eventToAdd);
         return "redirect:/events/" + eventToAdd.getName();
     }

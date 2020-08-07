@@ -25,4 +25,9 @@ public class NewVendorController {
         return "admin-profile-template";
     }
 
+    @GetMapping("/new-event")
+    public String newEventPage(Model model){
+        return "new-event-form-template";
+    }
+
 }
