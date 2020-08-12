@@ -26,9 +26,11 @@ article div {
 
 .food-truck-list {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
+
 
 .food-truck-list a {
     margin: 15px;
