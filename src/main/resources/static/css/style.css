@@ -6,14 +6,23 @@
 }
 
 :root {
-    --color1-pale-silver: hsla(38, 8%, 73%, 1);
+    /* --color1-pale-silver: hsla(38, 8%, 73%, 1);
     --color-2-yellow-munsell: hsla(51, 85%, 52%, 1);
     --color3-red-orange-color-wheel: hsla(15, 100%, 50%, 1);
     --color4-portland-orange: rgb(248, 136, 105);
     --color5-rich-black-fogra-39: hsla(180, 20%, 4%, 1);
     --header-font: "Ranchers", cursive;
     --sub-header-font: "Krona One", sans-serif;
-    --content-font: "Nunito", sans-serif;
+    --content-font: "Nunito", sans-serif; */
+
+    --color1-white: rgb(255, 255, 255);
+    --color-2-yellow-munsell: rgb(255, 226, 60);
+    --color3-orange-peel: rgb(255, 159, 28);
+    --color4-mellow-apricot: rgb(255, 191, 105);
+    --color5-rich-black-fogra-39: hsla(180, 20%, 4%, 1);
+    --header-font: "Ranchers", cursive;
+    --sub-header-font: "Krona One", sans-serif;
+    --content-font: "Nunito", sans-serif; 
 }
 
 a:link {
@@ -29,7 +38,7 @@ a:visited {
 }
 
 body {
-    background-color: var(--color1-pale-silver);
+    background-color: var(--color1-white);
 }
 
 button {
@@ -37,14 +46,14 @@ button {
     margin: 5px;
     padding: 10px;
     font-family: var(--content-font);
-    background-color: var(--color1-pale-silver);
+    background-color: var(--color1-white);
     border-radius: 20px;
     outline: none;
     cursor: pointer;
 }
 
 .event-form-button {
-    background-color: var(--color4-portland-orange);
+    background-color: var(--color4-mellow-apricot);
     width: 620px;
 }
 
@@ -113,16 +122,16 @@ nav li:hover {
 }
 
 .new-vendor-edit-form {
-    background-color: var(--color3-red-orange-color-wheel);
+    background-color: var(--color3-orange-peel);
 }
 
 .single-event-info {
-    background-color: var(--color3-red-orange-color-wheel);
+    background-color: var(--color3-orange-peel);
     font-family: var(--content-font);
 }
 
 .single-vendor-info {
-    background-color: var(--color3-red-orange-color-wheel);
+    background-color: var(--color3-orange-peel);
     font-family: var(--content-font);
 }
 
@@ -141,21 +150,21 @@ nav li:hover {
 }
 
 .food-truck-list a:nth-child(even) {
-    background-color: var(--color4-portland-orange);
+    background-color: var(--color4-mellow-apricot);
 }
 
 .food-truck-list a:nth-child(odd) {
-    background-color: var(--color3-red-orange-color-wheel);
+    background-color: var(--color3-orange-peel);
 }
 
 
 .upcoming-events {
-    background-color: var(--color4-portland-orange);
+    background-color: var(--color4-mellow-apricot);
     font-family: var(--content-font);
 }
 
 .upcoming-event-main {
-    background-color: var(--color3-red-orange-color-wheel);
+    background-color: var(--color3-orange-peel);
 }
 
 .upcoming-event-main a {
@@ -173,7 +182,7 @@ nav li:hover {
 }
 
 .vendor-input {
-    background-color: var(--color4-portland-orange);
+    background-color: var(--color4-mellow-apricot);
 }
 
 .vendor-input-form input {
