@@ -39,11 +39,12 @@ public class VendorController {
         return "redirect:/admin/" + vendorToAdd.getName();
     }
     @PostMapping("/vendors/events")
-    public String addEventToVendor(long id, String eventName){
-        Vendor vendor = vendorStorage.findById(id);
-        Event event = eventStorage.findByName(eventName);
+    public String addEventToVendor(long vendorId, long eventId){
+        Vendor vendor = vendorStorage.findById(vendorId);
+        Event event = eventStorage.findById(eventId);
         vendor.addEvent(event);
-        return "redirect:/vendors/" + vendor.getName();
+        vendorStorage.save(vendor);
+        return "redirect:/admin/events/" + event.getName();
     }
 
 }

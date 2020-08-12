@@ -10,6 +10,7 @@
     <title>Food Truck Frenzy</title>
 </head>
 
+
 <body>
 
 <div class="vendor-login">
@@ -18,8 +19,7 @@
         <input type="text" placeholder="Enter Vendor Name"/>
         <input type="password" placeholder="Enter Password"/>
         <a th:href="@{'/new-vendor'}">
-            <button type="button">Submit</button>
-        </a>
+            <button type="button">Submit</button></a>
     </form>
 </div>
 
@@ -29,7 +29,6 @@
         <h1>Food Truck Frenzy</h1>
         <img class="header-pic" src="/images/header-pic.png"/>
     </div>
-    <!-- <p>Vendor Log-In</p> -->
 </header>
 
 <nav>
@@ -49,21 +48,27 @@
     </ul>
 </nav>
 
-<div class="food-truck-list">
-    <a th:href="@{'/events/'+${event.name}}" th:each="event:${events}">
-        <article class="truck-info">
-            <div th:style="'background-image: url('+ ${event.imagePath} +')'" class="event-image"></div>
-            <div class="information">
-                <ul class="home-list">
-                    <li><strong th:text="${event.name}"></strong></li>
-                    <li th:text="${event.address}"></li>
-                    <li th:text="${event.getDateString()}"></li>
-                    <li th:text="${event.times}"></li>
-                </ul>
-            </div>
-        </article>
-    </a>
-
+<h2>New Event Form</h2>
+<div class="new-vendor-edit-form">
+    <form action="/events" method="POST">
+        <div class="vendor-input-form">
+            <input name="name" type="text" placeholder="Enter Event Name"/>
+            <input name="date" type="date" placeholder="Enter Event Date"/>
+            <input name="imagePath" type="text" placeholder="Enter Event Image"/>
+            <input name="address" id="autocomplete" type="text" placeholder="Enter Address" onFocus="geolocate()"
+                   required/>
+            <input type="hidden" name="latitude" id="latitude" required/>
+            <input type="hidden" name="longitude" id="longitude" required/>
+            <input name="times" type="text" placeholder="Enter Event Time"/>
+            <input name="locationName" type="text" placeholder="Enter Event Location Name"/>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
 </div>
 </body>
+<script src="/js/autocomplete.js"></script>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv1a-eDhLKuupUpyXmy0TD9chjD_GZJvg&libraries=places&callback=initAutocomplete"
+        defer
+></script>
 </html>
