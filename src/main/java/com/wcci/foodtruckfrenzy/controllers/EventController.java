@@ -41,7 +41,7 @@ public class EventController {
         LocalDate localDate = LocalDate.parse(date);
         Event eventToAdd = new Event(name, localDate, imagePath, address, times, latitude, longitude, locationName);
         eventStorage.save(eventToAdd);
-        return "redirect:/events/" + eventToAdd.getName();
+        return "redirect:/admin/events/" + eventToAdd.getName();
     }
 
 }
