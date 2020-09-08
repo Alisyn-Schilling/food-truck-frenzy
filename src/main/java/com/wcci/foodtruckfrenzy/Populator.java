@@ -29,9 +29,9 @@ public class Populator implements CommandLineRunner {
         Event event1 = new Event("Super Fun Event", LocalDate.of(2020, Month.AUGUST, 31), "../../images/HometownMarket.jpg", "3895 Columbus Rd, Centerburg, Ohio 43011", "3:00pm - 8:00pm", 40.3002819, -82.7057998, "Hometown Market");
         Event event2 = new Event("2020 Columbus Summer Wine Festival", LocalDate.of(2020, Month.AUGUST, 22), "../../images/ColumbusSummerWineFestival.jpg", "160 S. High Street, Columbus, Ohio 43215", "12:00pm - 8:00pm", 39.9688641, -83.0562056, "John F. Wolfe Columbus Commons");
         Event event3 = new Event("Central Ohio Afro Fest", LocalDate.of(2020, Month.OCTOBER, 18), "../../images/CentralOhioAfroFest.jpg", "2101 Noe Bixby Road, Columbus, Ohio 43232", "12:00pm - 6:00pm", 39.9628774, -93.0314769, "Phenix Banquet Center");
-        Event event4 = new Event("New Birth: Movie on the Lawn", LocalDate.of(2020, Month.AUGUST, 20), "../../images/MovieOnTheLawn.jpg", "3475 Refugee Road, Columbus, Ohio 43232", "7:00pm - 11:00pm", 39.952106, -83.0268608, "New Birth Christian Ministries");
-        Event event5 = new Event("Rockmill Brewery Summer Music Series: Charles & McKevitt", LocalDate.of(2020, Month.AUGUST, 16), "../../images/RockmillBrewery.jpg", "5705 Lithopolis Road Northwest, Lancaster, Ohio 43130", "5:00pm - 7:00pm", 39.8694521, -83.0347285, "Rockmill Brewery");
-        Event event6 = new Event("Reynoldsburg Festival", LocalDate.of(2020, Month.AUGUST, 8), "../../images/ReynoldsburgFestival.jpg", "1636 Graham Road, Reynoldsburg, Ohio 43068", "6:00pm - 8:00pm", 39.9713941, -83.0033249, "Reynoldsburg United Methodist Church");
+        Event event4 = new Event("New Birth: Movie on the Lawn", LocalDate.of(2020, Month.AUGUST, 29), "../../images/MovieOnTheLawn.jpg", "3475 Refugee Road, Columbus, Ohio 43232", "7:00pm - 11:00pm", 39.952106, -83.0268608, "New Birth Christian Ministries");
+        Event event5 = new Event("Rockmill Brewery Summer Music Series: Charles & McKevitt", LocalDate.of(2020, Month.SEPTEMBER, 16), "../../images/RockmillBrewery.jpg", "5705 Lithopolis Road Northwest, Lancaster, Ohio 43130", "5:00pm - 7:00pm", 39.8694521, -83.0347285, "Rockmill Brewery");
+        Event event6 = new Event("Reynoldsburg Festival", LocalDate.of(2020, Month.SEPTEMBER, 8), "../../images/ReynoldsburgFestival.jpg", "1636 Graham Road, Reynoldsburg, Ohio 43068", "6:00pm - 8:00pm", 39.9713941, -83.0033249, "Reynoldsburg United Methodist Church");
 
         eventRepository.save(event1);
         eventRepository.save(event2);
@@ -50,8 +50,8 @@ public class Populator implements CommandLineRunner {
         vendorRepository.save(vendor2);
 
         Location location2 = new Location("2245 N Bank Dr, Columbus, Ohio 43220", 40.0561122, -83.0807217, date1, true, "11:00am - 1:00pm", vendor2);
-        Location location10 = new Location("124 W Rich St, Columbus, Ohio 43215", 39.9688641, -83.057726, date1, true, "11:00am - 2:00pm", vendor2);
-        Location location11 = new Location("2375 N High St, Columbus, Ohio 43202", 39.9875284, -83.0632256, date1, true, "5:00pm - 9:00pm", vendor2);
+        Location location10 = new Location("124 W Rich St, Columbus, Ohio 43215", 39.9688641, -83.057726, LocalDate.of(2020, Month.AUGUST, 22), true, "11:00am - 2:00pm", vendor2);
+        Location location11 = new Location("2375 N High St, Columbus, Ohio 43202", 39.9875284, -83.0632256, LocalDate.of(2020, Month.AUGUST, 21), true, "5:00pm - 9:00pm", vendor2);
 
         locationRepository.save(location2);
         locationRepository.save(location10);
